@@ -1,57 +1,57 @@
 ~ start
-??? : Hey ! Salut les humains !!
-??? : Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
-Uquack : Alors, vous êtes venu apprendre les bases de Godot ?
+: Hey ! Salut les humains !!
+: Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
+: Alors, vous êtes venu apprendre les bases de Godot ?
 - Oui !
-	Uquack : [shake rate=20 level=10]Youpi !![/shake]
+	: [shake rate=20 level=10]Youpi !![/shake]
 - Non...
-	Uquack : [speed=0.2]Ah bon ? Mais tu es là, alors autant y rester, non ?[speed=1.0]
-	Uquack : Allez, on va s'amuser quand même !
-Uquack : Bienvenue à l'atelier de Godot !
-Uquack : Scènes, noeuds, héritage, programmation orientée objet... Mais je ne vais pas tout balancer d’un coup, promis.
-Uquack : Rassurez-vous, on va y aller étape par étape.
-Uquack : Pour passer un dialogue, appuie sur la barre espace ou clique, utilise les flèches ou la souris pour choisir une option.
-Uquack : Prêt·e ?
+	: [speed=0.2]Ah bon ? Mais tu es là, alors autant y rester, non ?[speed=1.0]
+	: Allez, on va s'amuser quand même !
+: Bienvenue à l'atelier de Godot !
+: Scènes, noeuds, héritage, programmation orientée objet... Mais je ne vais pas tout balancer d’un coup, promis.
+: Rassurez-vous, on va y aller étape par étape.
+: Pour passer un dialogue, appuie sur la barre espace ou clique, utilise les flèches ou la souris pour choisir une option.
+: Prêt·e ?
 => scenes
 
 ~ scenes
-Uquack : D’abord, parlons du concept de scène. C’est l’une de ces choses que les développeurs adorent.
-Uquack : On ne parle pas de théâtre, mais presque ! Une scène, c’est comme un niveau ou un écran de jeu.
-Uquack : Imagine un jeu de fête foraine où tu éclates des ballons... Tu vois l'écran avec tous les ballons ? Eh bien, cet écran, c’est une scène !
+: D’abord, parlons du concept de scène. C’est l’une de ces choses que les développeurs adorent.
+: On ne parle pas de théâtre, mais presque ! Une scène, c’est comme un niveau ou un écran de jeu.
+: Imagine un jeu de fête foraine où tu éclates des ballons... Tu vois l'écran avec tous les ballons ? Eh bien, cet écran, c’est une scène !
 - C'est clair ! C'est juste un écran de jeu.
-	Uquack : Exactement !
+	:Exactement !
 - Je ne comprends pas encore...
-	Uquack : [wave amp=15 freq=3]Ne t'inquiète pas, on va éclaircir tout ça.[/wave]
-Uquack : Une scène dans Godot, c’est un regroupement de plusieurs éléments : des objets, des animations, du son, tout ce que tu vois à l’écran.
-Uquack : Par exemple, notre scène "fête foraine" a des ballons et un décor. Chacun de ces éléments est une sous-scène. Oui, même le ballon !
-Uquack : Tu vas aimer ça : une scène peut être dans une autre scène. C’est comme des poupées russes, mais pour les devs. Pratique, non ?
+	: [wave amp=15 freq=3]Ne t'inquiète pas, on va éclaircir tout ça.[/wave]
+: Une scène dans Godot, c’est un regroupement de plusieurs éléments : des objets, des animations, du son, tout ce que tu vois à l’écran.
+: Par exemple, notre scène "fête foraine" a des ballons et un décor. Chacun de ces éléments est une sous-scène. Oui, même le ballon !
+: Tu vas aimer ça : une scène peut être dans une autre scène. C’est comme des poupées russes, mais pour les devs. Pratique, non ?
 - Pourquoi mettre une scène dans une scène ?
-Uquack : Bonne question ! Ça permet d’organiser ton projet et de réutiliser des éléments. Imagine que tu crées un seul ballon et que tu veux en avoir dix sur l’écran. Tu ne veux pas le recréer à chaque fois, non ?
-Uquack : Alors tu crées une scène "ballon" que tu utilises plusieurs fois dans ta scène "fête foraine". Pratique et efficace !
-Uquack : Résumons ! Chaque écran de jeu est une scène, et tu peux imbriquer des scènes dans d’autres scènes pour mieux organiser ton jeu.
+: Bonne question ! Ça permet d’organiser ton projet et de réutiliser des éléments. Imagine que tu crées un seul ballon et que tu veux en avoir dix sur l’écran. Tu ne veux pas le recréer à chaque fois, non ?
+: Alors tu crées une scène "ballon" que tu utilises plusieurs fois dans ta scène "fête foraine". Pratique et efficace !
+: Résumons ! Chaque écran de jeu est une scène, et tu peux imbriquer des scènes dans d’autres scènes pour mieux organiser ton jeu.
 - Je peux voir comment ça marche dans l'éditeur ?
-Uquack : Absolument ! Dans l’éditeur de Godot, tu verras une arborescence. C’est comme une liste de tout ce qui compose ta scène. Les noeuds, les objets, les sous-scènes, tout y est.
-Uquack : Je t’ai pas perdu, hein ? C’est tout simple une fois que tu t’y mets.
+: Absolument ! Dans l’éditeur de Godot, tu verras une arborescence. C’est comme une liste de tout ce qui compose ta scène. Les noeuds, les objets, les sous-scènes, tout y est.
+: Je t’ai pas perdu, hein ? C’est tout simple une fois que tu t’y mets.
 => nodes
 
 ~ nodes
-Uquack : On passe à un autre concept clé : les noeuds.
-Uquack : Tout dans Godot est un noeud. Les scènes ? Ce ne sont que des regroupements de noeuds.
-Uquack : Alors, à quoi ça sert, un noeud ? Bonne question ! [shake rate=5 level=5]Je te laisse deviner ![/shake]
+: On passe à un autre concept clé : les noeuds.
+: Tout dans Godot est un noeud. Les scènes ? Ce ne sont que des regroupements de noeuds.
+: Alors, à quoi ça sert, un noeud ? Bonne question ! [shake rate=5 level=5]Je te laisse deviner ![/shake]
 - À tout gérer dans la scène ?
-	Uquack : Bingo ! Les noeuds font tout le boulot. Chaque noeud a un rôle bien précis, comme gérer une image, un son ou une interaction.
+	: Bingo ! Les noeuds font tout le boulot. Chaque noeud a un rôle bien précis, comme gérer une image, un son ou une interaction.
 - Je ne sais pas...
-	Uquack : C’est pas grave ! Les noeuds, c’est un peu comme des super-héros : chacun a un pouvoir particulier.
-Uquack : Par exemple, notre ballon a un noeud MeshInstance3D qui lui donne sa forme 3D.
-Uquack : Enlève ce noeud, plus de ballon ! [shake rate=10 level=7]Pouf, disparu ![/shake]
-Uquack : Ensuite, il y a un CollisionShape, un autre noeud, qui permet de donner un contour à ce ballon. Ce contour sert à détecter les clics. En gros, sans ce noeud, impossible de cliquer dessus pour le faire exploser !
-Uquack : Et puis, il y a le noeud Area, le chef d’orchestre de notre ballon. Ce noeud permet de détecter les clics de souris pour exploser les ballons. [shake rate=10 level=5]C'est la magie Godot en action ![/shake]
+	: C’est pas grave ! Les noeuds, c’est un peu comme des super-héros : chacun a un pouvoir particulier.
+: Par exemple, notre ballon a un noeud MeshInstance3D qui lui donne sa forme 3D.
+: Enlève ce noeud, plus de ballon ! [shake rate=10 level=7]Pouf, disparu ![/shake]
+: Ensuite, il y a un CollisionShape, un autre noeud, qui permet de donner un contour à ce ballon. Ce contour sert à détecter les clics. En gros, sans ce noeud, impossible de cliquer dessus pour le faire exploser !
+: Et puis, il y a le noeud Area, le chef d’orchestre de notre ballon. Ce noeud permet de détecter les clics de souris pour exploser les ballons. [shake rate=10 level=5]C'est la magie Godot en action ![/shake]
 - Ok, mais pourquoi tout ça ?
-	Uquack : Parce que chaque noeud apporte une fonctionnalité spécifique, et c’est cette modularité qui rend Godot si puissant.
-	Uquack : Tu ne veux pas tout coder toi-même à chaque fois, non ? Avec des noeuds, tu réutilises ce qui marche déjà.
+	: Parce que chaque noeud apporte une fonctionnalité spécifique, et c’est cette modularité qui rend Godot si puissant.
+	: Tu ne veux pas tout coder toi-même à chaque fois, non ? Avec des noeuds, tu réutilises ce qui marche déjà.
 - D'autres exemples ?
-	Uquack : Bien sûr ! Un bouton, un personnage, un son, tout ce que tu ajoutes à ton jeu est un noeud ou un regroupement de noeuds. Même la caméra est un noeud !
-Uquack: Bon, si tu as tout suivi, tu vois qu’une scène, c’est juste un ensemble de noeuds qui travaillent ensemble pour donner vie à un élément du jeu.
-Uquack: Maintenant que tu connais les bases, tu veux tester un autre mini-jeu ? C’est le meilleur moyen d’apprendre !
+	: Bien sûr ! Un bouton, un personnage, un son, tout ce que tu ajoutes à ton jeu est un noeud ou un regroupement de noeuds. Même la caméra est un noeud !
+: Bon, si tu as tout suivi, tu vois qu’une scène, c’est juste un ensemble de noeuds qui travaillent ensemble pour donner vie à un élément du jeu.
+: Maintenant que tu connais les bases, tu veux tester un autre mini-jeu ? C’est le meilleur moyen d’apprendre !
 - C'est parti !
 => END

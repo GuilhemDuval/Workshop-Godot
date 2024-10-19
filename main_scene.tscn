@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bme2eebn1ao58"]
+[gd_scene load_steps=29 format=3 uid="uid://bme2eebn1ao58"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_c2ir2"]
 [ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_2upk4"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bmq4migducauo" path="res://minigames/balloon_popper/balloon_popper.tscn" id="6_8xlxt"]
 [ext_resource type="Script" path="res://duck.gd" id="6_qk63l"]
 [ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_si0pb"]
-[ext_resource type="Texture2D" uid="uid://ey58jhedsck" path="res://ressources/speech_box.png" id="11_i3nr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at351"]
 atlas = ExtResource("5_a75ff")
@@ -212,9 +211,4 @@ render_target_update_mode = 4
 [node name="StartBar" type="Sprite2D" parent="."]
 position = Vector2(0, 511)
 texture = ExtResource("10_si0pb")
-centered = false
-
-[node name="SpeechBox" type="Sprite2D" parent="."]
-position = Vector2(113, 344)
-texture = ExtResource("11_i3nr5")
 centered = false
