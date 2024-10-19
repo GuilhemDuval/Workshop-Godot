@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdjpicpxkcp6s"]
 
-[ext_resource type="Script" path="res://coin_collector/player.gd" id="1_hatld"]
-[ext_resource type="Texture2D" uid="uid://d3iwiieobd78e" path="res://coin_collector/Sprites/Player.png" id="2_vfr07"]
-[ext_resource type="PackedScene" uid="uid://cwwosq2y31ron" path="res://coin_collector/coin.tscn" id="3_lxi5l"]
+[ext_resource type="Script" path="res://minigames/coin_collector/player.gd" id="1_hatld"]
+[ext_resource type="Texture2D" uid="uid://d3iwiieobd78e" path="res://minigames/coin_collector/Sprites/Player.png" id="2_vfr07"]
+[ext_resource type="PackedScene" uid="uid://cwwosq2y31ron" path="res://minigames/coin_collector/coin.tscn" id="3_lxi5l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1od1u"]
 size = Vector2(53, 66)

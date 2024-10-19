@@ -1,18 +1,15 @@
-[gd_scene load_steps=33 format=3 uid="uid://bme2eebn1ao58"]
+[gd_scene load_steps=30 format=3 uid="uid://bme2eebn1ao58"]
 
-[ext_resource type="Script" path="res://test_dialogue.gd" id="1_c2ir2"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_c2ir2"]
 [ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_2upk4"]
-[ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://background.png" id="3_75qr3"]
-[ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://minigame_screen.png" id="3_kcro2"]
-[ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://paint_box.png" id="4_u2pif"]
-[ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ducky_2_spritesheet.png" id="5_a75ff"]
-[ext_resource type="PackedScene" uid="uid://b817pb4f38j3s" path="res://physics/physics.tscn" id="5_g31yn"]
-[ext_resource type="PackedScene" uid="uid://bmq4migducauo" path="res://balloon_popper/balloon_popper.tscn" id="6_8xlxt"]
+[ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://ressources/background.png" id="3_75qr3"]
+[ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="3_kcro2"]
+[ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="4_u2pif"]
+[ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="5_a75ff"]
+[ext_resource type="PackedScene" uid="uid://bmq4migducauo" path="res://minigames/balloon_popper/balloon_popper.tscn" id="6_8xlxt"]
 [ext_resource type="Script" path="res://duck.gd" id="6_qk63l"]
-[ext_resource type="PackedScene" uid="uid://uobhgbnd5xy6" path="res://collision/collision.tscn" id="7_is8ll"]
-[ext_resource type="PackedScene" uid="uid://bdjpicpxkcp6s" path="res://coin_collector/coin_collector_scene.tscn" id="8_77u5l"]
-[ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://start_bar.png" id="10_si0pb"]
-[ext_resource type="Texture2D" uid="uid://ey58jhedsck" path="res://speech_box.png" id="11_i3nr5"]
+[ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_si0pb"]
+[ext_resource type="Texture2D" uid="uid://ey58jhedsck" path="res://ressources/speech_box.png" id="11_i3nr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at351"]
 atlas = ExtResource("5_a75ff")
@@ -163,20 +160,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TestDialogue" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 script = ExtResource("1_c2ir2")
 dialogue_resource = ExtResource("2_2upk4")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(480, 270)
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
 texture = ExtResource("3_75qr3")
 
-[node name="PaintBox" type="Sprite2D" parent="."]
-position = Vector2(211, 234)
+[node name="PaintBox" type="TextureRect" parent="."]
+offset_left = 52.0
+offset_top = 64.0
+offset_right = 387.0
+offset_bottom = 401.0
 texture = ExtResource("4_u2pif")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PaintBox"]
-position = Vector2(15, -34)
+position = Vector2(176, 139)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hgndl")
 animation = &"wiggle"
@@ -184,18 +185,21 @@ frame = 1
 frame_progress = 0.217622
 script = ExtResource("6_qk63l")
 
-[node name="MinigameScreen" type="Sprite2D" parent="."]
-position = Vector2(419, 26)
+[node name="MinigameScreen" type="TextureRect" parent="."]
+offset_left = 419.0
+offset_top = 26.0
+offset_right = 919.0
+offset_bottom = 326.0
 texture = ExtResource("3_kcro2")
-centered = false
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="MinigameScreen"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MinigameScreen"]
+layout_mode = 0
 offset_left = 14.0
 offset_top = 40.0
 offset_right = 526.0
 offset_bottom = 552.0
 
-[node name="SubViewport" type="SubViewport" parent="MinigameScreen/SubViewportContainer2"]
+[node name="SubViewport" type="SubViewport" parent="MinigameScreen/SubViewportContainer"]
 handle_input_locally = false
 physics_object_picking = true
 physics_object_picking_first_only = true
@@ -203,57 +207,7 @@ size = Vector2i(470, 245)
 size_2d_override_stretch = true
 render_target_update_mode = 4
 
-[node name="Main2" parent="MinigameScreen/SubViewportContainer2/SubViewport" instance=ExtResource("6_8xlxt")]
-
-[node name="SubViewportContainer3" type="SubViewportContainer" parent="MinigameScreen"]
-visible = false
-offset_left = 14.0
-offset_top = 40.0
-offset_right = 526.0
-offset_bottom = 552.0
-
-[node name="SubViewport" type="SubViewport" parent="MinigameScreen/SubViewportContainer3"]
-handle_input_locally = false
-physics_object_picking = true
-physics_object_picking_first_only = true
-size = Vector2i(470, 245)
-render_target_update_mode = 0
-
-[node name="Main" parent="MinigameScreen/SubViewportContainer3/SubViewport" instance=ExtResource("7_is8ll")]
-visible = false
-
-[node name="SubViewportContainer4" type="SubViewportContainer" parent="MinigameScreen"]
-visible = false
-offset_left = 14.0
-offset_top = 40.0
-offset_right = 526.0
-offset_bottom = 552.0
-
-[node name="SubViewport" type="SubViewport" parent="MinigameScreen/SubViewportContainer4"]
-handle_input_locally = false
-physics_object_picking = true
-physics_object_picking_first_only = true
-size = Vector2i(470, 245)
-render_target_update_mode = 0
-
-[node name="CoinCollectorScene" parent="MinigameScreen/SubViewportContainer4/SubViewport" instance=ExtResource("8_77u5l")]
-visible = false
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="MinigameScreen"]
-visible = false
-offset_left = 230.0
-offset_top = -40.0
-offset_right = 742.0
-offset_bottom = 472.0
-
-[node name="SubViewport" type="SubViewport" parent="MinigameScreen/SubViewportContainer"]
-handle_input_locally = false
-size_2d_override_stretch = true
-render_target_update_mode = 0
-
-[node name="Main" parent="MinigameScreen/SubViewportContainer/SubViewport" instance=ExtResource("5_g31yn")]
-visible = false
-position = Vector2(773, 286)
+[node name="MinigameBallon" parent="MinigameScreen/SubViewportContainer/SubViewport" instance=ExtResource("6_8xlxt")]
 
 [node name="StartBar" type="Sprite2D" parent="."]
 position = Vector2(0, 511)

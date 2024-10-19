@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://mw6ri0qa5kg4"]
 
-[ext_resource type="Script" path="res://balloon_popper/balloon.gd" id="1_3wt1s"]
-[ext_resource type="Material" uid="uid://b2tgi2qmxpp7e" path="res://balloon_popper/balloon_material.tres" id="2_e686i"]
+[ext_resource type="Script" path="res://minigames/balloon_popper/balloon.gd" id="1_3wt1s"]
+[ext_resource type="Material" uid="uid://b2tgi2qmxpp7e" path="res://minigames/balloon_popper/balloon_material.tres" id="2_e686i"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dt05h"]
 

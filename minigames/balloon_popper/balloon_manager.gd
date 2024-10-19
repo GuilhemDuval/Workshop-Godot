@@ -1,9 +1,9 @@
 extends Node3D
 
 var score : int = 0
-var balloon_to_spawn : int = 5
+var balloon_to_spawn : int = 10
 @export var score_text : Label
-var balloon_scene = preload("res://balloon_popper/balloon.tscn")
+var balloon_scene = preload("res://minigames/balloon_popper/balloon.tscn")
 
 
 
@@ -19,8 +19,8 @@ func _ready() -> void:
 func spawn_balloons() -> void:
 	for i in range(balloon_to_spawn):
 		var new_balloon = balloon_scene.instantiate()
-		var new_position = Vector3(randf_range(-6.0, 6.0), randf_range(-2.0, 2.0), randf_range(0.0, 3.0))
-		new_balloon.clicks_to_pop = randi_range(1, 5)
+		var new_position = Vector3(randf_range(-6.0, 6.0), randf_range(-3.0, 3.0), randf_range(0.0, 3.0))
+		new_balloon.clicks_to_pop = randi_range(1, 3)
 		new_balloon.position = new_position
 		new_balloon.connect("balloon_popped", Callable(self, "_on_balloon_popped"))
 		add_child(new_balloon)

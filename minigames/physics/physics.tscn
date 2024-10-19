@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b817pb4f38j3s"]
 
-[ext_resource type="Script" path="res://physics/physics_player.gd" id="1_1t2lr"]
-[ext_resource type="Texture2D" uid="uid://bfhhgojhb5ayl" path="res://physics/PhysicsCharacter.png" id="2_lauqk"]
-[ext_resource type="PackedScene" uid="uid://c0o7yntxveidi" path="res://physics/crate.tscn" id="3_mwgan"]
+[ext_resource type="Script" path="res://minigames/physics/physics_player.gd" id="1_1t2lr"]
+[ext_resource type="Texture2D" uid="uid://bfhhgojhb5ayl" path="res://minigames/physics/PhysicsCharacter.png" id="2_lauqk"]
+[ext_resource type="PackedScene" uid="uid://c0o7yntxveidi" path="res://minigames/physics/crate.tscn" id="3_mwgan"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af7s8"]
 size = Vector2(18, 18)

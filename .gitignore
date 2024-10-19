@@ -1,3 +1,12 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Godot-specific ignore patterns
+.import/
+.export/
+*.import
+*.tmp
+
+# Godot editor configurations
+.editor_settings-*

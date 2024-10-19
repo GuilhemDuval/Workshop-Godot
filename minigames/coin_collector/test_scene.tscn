@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://icc8rbpxkgl8"]
 
-[ext_resource type="PackedScene" uid="uid://bt22o4vmw4bdq" path="res://coin_collector/player.tscn" id="1_tuxac"]
-[ext_resource type="PackedScene" uid="uid://cwwosq2y31ron" path="res://coin_collector/coin.tscn" id="2_g3apb"]
+[ext_resource type="PackedScene" uid="uid://bt22o4vmw4bdq" path="res://minigames/coin_collector/player.tscn" id="1_tuxac"]
+[ext_resource type="PackedScene" uid="uid://cwwosq2y31ron" path="res://minigames/coin_collector/coin.tscn" id="2_g3apb"]
 
 [sub_resource type="GDScript" id="GDScript_os4dc"]
 script/source = "extends Node2D

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt22o4vmw4bdq"]
+
+[ext_resource type="Texture2D" uid="uid://d3iwiieobd78e" path="res://minigames/coin_collector/Sprites/Player.png" id="1_lp6gs"]
+[ext_resource type="Script" path="res://minigames/coin_collector/player.gd" id="2_7feq7"]
+
+[node name="Player" type="Sprite2D"]
+texture = ExtResource("1_lp6gs")
+script = ExtResource("2_7feq7")

@@ -9,7 +9,7 @@ const Ballon = preload("res://balloon.tscn")
 func _ready() -> void:
 	var ballon: Node = Ballon.instantiate()
 	get_tree().current_scene.add_child(ballon)
-	#ballon.start(dialogue_resource, dialogue_start)
+	ballon.start(dialogue_resource, dialogue_start)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
