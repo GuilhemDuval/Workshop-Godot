@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b2tgi2qmxpp7e"]
+
+[resource]
+albedo_color = Color(1, 0.00392157, 0, 1)
+roughness = 0.25
+emission_energy_multiplier = 3.87

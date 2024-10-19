@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwj1lpr6e1cvd"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lxtoh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djpdr"]
+albedo_color = Color(0.50091, 0.218299, 0.111073, 1)
+roughness = 0.7
+rim_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w2jhj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qouar"]
+albedo_color = Color(3.60981e-07, 0.545229, 0.00275308, 1)
+roughness = 0.55
+rim_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u5f2w"]
+size = Vector3(0.389, 2.425, 0.501)
+
+[node name="Tree" type="StaticBody3D" groups=["Tree"]]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0.992572, 0)
+mesh = SubResource("CylinderMesh_lxtoh")
+surface_material_override/0 = SubResource("StandardMaterial3D_djpdr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.235, 0, 0, 0, 1.11, 0, 0, 0, 2.045, 0, 2.89432, 0)
+mesh = SubResource("CapsuleMesh_w2jhj")
+surface_material_override/0 = SubResource("StandardMaterial3D_qouar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0478516, 1.23254, 0.010559)
+shape = SubResource("BoxShape3D_u5f2w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.45, 0, 0, 0, 0.927, 0, 0, 0, 1.557, 0, 4.098, 0)
+mesh = SubResource("CapsuleMesh_w2jhj")
+skeleton = NodePath("../MeshInstance3D2")
+surface_material_override/0 = SubResource("StandardMaterial3D_qouar")

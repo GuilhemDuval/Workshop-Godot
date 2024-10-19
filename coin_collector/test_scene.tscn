@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://icc8rbpxkgl8"]
+
+[ext_resource type="PackedScene" uid="uid://bt22o4vmw4bdq" path="res://coin_collector/player.tscn" id="1_tuxac"]
+[ext_resource type="PackedScene" uid="uid://cwwosq2y31ron" path="res://coin_collector/coin.tscn" id="2_g3apb"]
+
+[sub_resource type="GDScript" id="GDScript_os4dc"]
+script/source = "extends Node2D
+
+var time_left : float = 5
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	# Replace with function body.
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	time_left -= delta
+	print(time_left)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("GDScript_os4dc")
+
+[node name="Player" parent="." instance=ExtResource("1_tuxac")]
+
+[node name="Coin" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(298, 52)
+
+[node name="Coin2" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(387, 48)
+
+[node name="Coin4" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(347, 95)
+scale = Vector2(1.96704, 1.96704)
+
+[node name="Coin5" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(344, 14)
+scale = Vector2(1.96704, 1.96704)
+
+[node name="Coin6" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(226, 51)
+rotation = 0.780157
+scale = Vector2(1.96704, 1.96704)
+
+[node name="Coin7" parent="." instance=ExtResource("2_g3apb")]
+position = Vector2(459, 44)
+rotation = 0.780157
+scale = Vector2(1.96704, 1.96704)
