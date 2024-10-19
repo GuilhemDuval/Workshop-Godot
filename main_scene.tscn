@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="3_kcro2"]
 [ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="4_u2pif"]
 [ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="5_a75ff"]
-[ext_resource type="PackedScene" uid="uid://bmq4migducauo" path="res://minigames/balloon_popper/balloon_popper.tscn" id="6_8xlxt"]
 [ext_resource type="Script" path="res://duck.gd" id="6_qk63l"]
+[ext_resource type="Script" path="res://sub_viewport.gd" id="9_uopo8"]
 [ext_resource type="AudioStream" uid="uid://dx5j2cfah7oeq" path="res://ressources/quack.mp3" id="10_g7fvx"]
 [ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_si0pb"]
 
@@ -206,8 +206,7 @@ physics_object_picking_first_only = true
 size = Vector2i(470, 245)
 size_2d_override_stretch = true
 render_target_update_mode = 4
-
-[node name="MinigameBallon" parent="MinigameScreen/SubViewportContainer/SubViewport" instance=ExtResource("6_8xlxt")]
+script = ExtResource("9_uopo8")
 
 [node name="StartBar" type="Sprite2D" parent="."]
 position = Vector2(0, 511)
@@ -217,4 +216,4 @@ centered = false
 [node name="Quack" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("10_g7fvx")
-volume_db = -10.0
+volume_db = -16.0
