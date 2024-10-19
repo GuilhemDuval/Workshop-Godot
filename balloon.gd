@@ -7,8 +7,6 @@ extends CanvasLayer
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"ui_cancel"
 
-@export var talk_sound : AudioStreamPlayer
-
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -167,6 +165,4 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
-	if letter in [".", " ","!", "?"]:
-		talk_sound.pitch_scale = randf_range(0.9, 1.1)
-		talk_sound.play()
+	pass

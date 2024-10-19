@@ -1,5 +1,6 @@
 ~ start
 : Hey ! Salut les humains !!
+do duck.change_animation("walk")
 : Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
 : Alors, vous êtes venu apprendre les bases de Godot ?
 - Oui !
@@ -19,7 +20,7 @@
 : On ne parle pas de théâtre, mais presque ! Une scène, c’est comme un niveau ou un écran de jeu.
 : Imagine un jeu de fête foraine où tu éclates des ballons... Tu vois l'écran avec tous les ballons ? Eh bien, cet écran, c’est une scène !
 - C'est clair ! C'est juste un écran de jeu.
-	:Exactement !
+	: Exactement !
 - Je ne comprends pas encore...
 	: [wave amp=15 freq=3]Ne t'inquiète pas, on va éclaircir tout ça.[/wave]
 : Une scène dans Godot, c’est un regroupement de plusieurs éléments : des objets, des animations, du son, tout ce que tu vois à l’écran.
