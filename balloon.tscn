@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=16 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://dqfuyysmwg4rg" path="res://ressources/choice_box.png" id="4_utfth"]
 [ext_resource type="Script" path="res://choice_box.gd" id="5_wtbh1"]
+[ext_resource type="AudioStream" uid="uid://dx5j2cfah7oeq" path="res://ressources/quack.mp3" id="7_leovy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -151,9 +152,10 @@ texture_margin_top = 26.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon" type="CanvasLayer" node_paths=PackedStringArray("talk_sound")]
 layer = 100
 script = ExtResource("1_36de5")
+talk_sound = NodePath("Quack")
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -161,9 +163,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 82.0
+offset_left = 125.0
 offset_top = 344.0
-offset_right = -284.0
+offset_right = -241.0
 offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -217,14 +219,14 @@ scroll_active = true
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 984.0
-offset_top = 290.0
+offset_top = 293.0
 offset_right = 1314.0
-offset_bottom = 385.0
+offset_bottom = 388.0
 theme = ExtResource("2_ffy2u")
 theme_override_styles/panel = SubResource("StyleBoxTexture_bd2j8")
 script = ExtResource("5_wtbh1")
-hidden_position = Vector2(984, 290)
-visible_position = Vector2(560, 290)
+hidden_position = Vector2(984, 293)
+visible_position = Vector2(511, 293)
 
 [node name="Responses" type="MarginContainer" parent="Panel2"]
 layout_mode = 1
@@ -251,5 +253,10 @@ size_flags_horizontal = 4
 theme = ExtResource("2_ffy2u")
 text = "Response example"
 
+[node name="Quack" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_leovy")
+
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="spoke" from="Balloon/Panel/Dialogue/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Panel2/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
