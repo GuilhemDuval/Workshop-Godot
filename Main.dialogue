@@ -23,8 +23,10 @@ do duck.change_animation("walk")
 	: Exactement !
 - Je ne comprends pas encore...
 	: [wave amp=15 freq=3]Ne t'inquiète pas, on va éclaircir tout ça.[/wave]
+do media_box.move_visible()
 : Une scène dans Godot, c’est un regroupement de plusieurs éléments : des objets, des animations, du son, tout ce que tu vois à l’écran.
 : Par exemple, notre scène "fête foraine" a des ballons et un décor. Chacun de ces éléments est une sous-scène. Oui, même le ballon !
+do media_box.move_hidden()
 : Tu vas aimer ça : une scène peut être dans une autre scène. C’est comme des poupées russes, mais pour les devs. Pratique, non ?
 - Pourquoi mettre une scène dans une scène ?
 : Bonne question ! Ça permet d’organiser ton projet et de réutiliser des éléments. Imagine que tu crées un seul ballon et que tu veux en avoir dix sur l’écran. Tu ne veux pas le recréer à chaque fois, non ?

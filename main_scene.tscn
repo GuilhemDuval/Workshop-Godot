@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bme2eebn1ao58"]
+[gd_scene load_steps=33 format=3 uid="uid://bme2eebn1ao58"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_c2ir2"]
 [ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_2upk4"]
@@ -10,6 +10,9 @@
 [ext_resource type="Script" path="res://sub_viewport.gd" id="9_uopo8"]
 [ext_resource type="AudioStream" uid="uid://dx5j2cfah7oeq" path="res://ressources/quack.mp3" id="10_g7fvx"]
 [ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_si0pb"]
+[ext_resource type="Texture2D" uid="uid://bn864cg1fa18s" path="res://ressources/media_box.png" id="11_4s628"]
+[ext_resource type="Script" path="res://media_box.gd" id="12_ug1vt"]
+[ext_resource type="Texture2D" uid="uid://wacvubhil3gw" path="res://minigames/collision/cloudy_sky.png" id="13_tun6g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at351"]
 atlas = ExtResource("5_a75ff")
@@ -217,3 +220,22 @@ centered = false
 unique_name_in_owner = true
 stream = ExtResource("10_g7fvx")
 volume_db = -16.0
+
+[node name="MediaBox" type="TextureRect" parent="."]
+offset_left = 1014.0
+offset_top = 90.0
+offset_right = 1318.0
+offset_bottom = 331.0
+texture = ExtResource("11_4s628")
+script = ExtResource("12_ug1vt")
+hidden_position = Vector2(1014, 90)
+visible_position = Vector2(580, 170)
+
+[node name="TextureRect" type="TextureRect" parent="MediaBox"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 49.0
+offset_right = 299.0
+offset_bottom = 215.0
+texture = ExtResource("13_tun6g")
+expand_mode = 1

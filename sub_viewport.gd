@@ -6,7 +6,7 @@ var minigame_ski = preload("res://minigames/collision/collision.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-	var minigame = minigame_ski.instantiate()
+	var minigame = minigame_balloon.instantiate()
 	add_child(minigame)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
