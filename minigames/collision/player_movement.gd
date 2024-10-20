@@ -10,12 +10,12 @@ func _physics_process(_delta: float) -> void:
 		linear_velocity.x = move_speed
 		
 	if position.y < fall_threshold:
-		call_deferred("reload_scene")
+		reload_scene() 
 
 
-func _on_body_entered(body: Node) -> void:
+func _on_body_entered(body: Node):
 	if body.is_in_group("Tree"):
-		call_deferred("reload_scene")        
+		reload_scene()        
 
 func reload_scene():
 	var new_basis = Basis()

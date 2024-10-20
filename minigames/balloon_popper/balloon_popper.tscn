@@ -18,44 +18,47 @@ background_mode = 2
 sky = SubResource("Sky_bmjie")
 ambient_light_color = Color(0.161528, 0.45615, 0.55872, 1)
 
-[node name="MinigameBalloon" type="Node3D" node_paths=PackedStringArray("score_text")]
+[node name="MiniJeuBallon" type="Node3D" node_paths=PackedStringArray("score_text")]
 script = ExtResource("1_co5fl")
-score_text = NodePath("ScoreText")
+score_text = NodePath("TexteDuScore")
 
-[node name="Balloon" parent="." instance=ExtResource("2_sq2yh")]
-visible = false
-
-[node name="Balloon2" parent="." instance=ExtResource("2_sq2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51716, 5, -6.15501)
-visible = false
-
-[node name="Balloon3" parent="." instance=ExtResource("2_sq2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5897, 0, 0.977259)
-visible = false
-clicks_to_pop = 10
-
-[node name="Balloon4" parent="." instance=ExtResource("2_sq2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9164, -0.0156236)
-visible = false
-
-[node name="Balloon5" parent="." instance=ExtResource("2_sq2yh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47621, 2.83237, 0.527868)
-visible = false
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.81729)
-current = true
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.331853, 0.889688, 0.313576, -0.686808, -1.47414e-07, 0.726839, 0.646659, -0.45657, 0.611044, 12.4727, 5.00417, 6.89795)
-
-[node name="ScoreText" type="Label" parent="."]
+[node name="TexteDuScore" type="Label" parent="."]
 offset_left = 16.0
 offset_top = 13.0
 offset_right = 330.0
 offset_bottom = 49.0
 text = "Score : 0"
 label_settings = SubResource("LabelSettings_11ds8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.81729)
+current = true
+
+[node name="Ballons" type="Node3D" parent="."]
+visible = false
+
+[node name="Ballon1" parent="Ballons" instance=ExtResource("2_sq2yh")]
+visible = false
+
+[node name="Ballon2" parent="Ballons" instance=ExtResource("2_sq2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.51716, 5, -6.15501)
+visible = false
+
+[node name="Ballon3" parent="Ballons" instance=ExtResource("2_sq2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5897, 0, 0.977259)
+visible = false
+clicks_to_pop = 10
+
+[node name="Ballon4" parent="Ballons" instance=ExtResource("2_sq2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9164, -0.0156236)
+visible = false
+
+[node name="Ballon5" parent="Ballons" instance=ExtResource("2_sq2yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.47621, 2.83237, 0.527868)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.331853, 0.889688, 0.313576, -0.686808, -1.47414e-07, 0.726839, 0.646659, -0.45657, 0.611044, 12.4727, 5.00417, 6.89795)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d3mqv")

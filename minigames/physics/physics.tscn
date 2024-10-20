@@ -13,7 +13,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af7s8"]
 size = Vector2(14, 24)
 
-[node name="Main" type="Node2D"]
+[node name="MiniJeuEchecs" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -255.0
@@ -23,7 +23,7 @@ offset_bottom = 151.0
 texture = ExtResource("1_ujl7n")
 stretch_mode = 1
 
-[node name="Player" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-7, -4)
 mass = 5.0
 gravity_scale = 0.0
@@ -31,10 +31,10 @@ linear_damp = 1.0
 angular_damp = 100.0
 script = ExtResource("1_1t2lr")
 
-[node name="Sprite" type="Sprite2D" parent="Player"]
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("2_04p3x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_af7s8")
 

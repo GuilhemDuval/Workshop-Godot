@@ -3,28 +3,32 @@
 [ext_resource type="Script" path="res://minigames/balloon_popper/balloon.gd" id="1_3wt1s"]
 [ext_resource type="Material" uid="uid://b2tgi2qmxpp7e" path="res://minigames/balloon_popper/balloon_material.tres" id="2_e686i"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_dt05h"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_be6pr"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_tcxq5"]
 radius = 0.602552
 
-[node name="Balloon" type="Area3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_be6pr"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_dt05h"]
+
+[node name="Area3D" type="Area3D"]
 script = ExtResource("1_3wt1s")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.128383, 0, 0, 0, 0.0889013, 0, 0, 0, 0.0874062, 0.00722031, -0.600962, 0.0105933)
-material_override = ExtResource("2_e686i")
-mesh = SubResource("PrismMesh_dt05h")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1.15, 0, 0, 0, 1, -0.0106544, -2.38419e-07, 0.000352859)
-material_override = ExtResource("2_e686i")
-mesh = SubResource("SphereMesh_be6pr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.994286, 0, 0, 0, 0.994286, 0, 0, 0, 0.994286, 0, 0, 0)
 shape = SubResource("SphereShape3D_tcxq5")
+
+[node name="Forme du ballon" type="Node3D" parent="."]
+
+[node name="MeshInstance3D1" type="MeshInstance3D" parent="Forme du ballon"]
+transform = Transform3D(1, 0, 0, 0, 1.15, 0, 0, 0, 1, -0.0106544, -2.38419e-07, 0.000352859)
+material_override = ExtResource("2_e686i")
+mesh = SubResource("SphereMesh_be6pr")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Forme du ballon"]
+transform = Transform3D(0.128383, 0, 0, 0, 0.0889013, 0, 0, 0, 0.0874062, 0.00722031, -0.600962, 0.0105933)
+material_override = ExtResource("2_e686i")
+mesh = SubResource("PrismMesh_dt05h")
+skeleton = NodePath("../..")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
