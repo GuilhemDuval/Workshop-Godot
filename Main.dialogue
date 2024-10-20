@@ -4,11 +4,14 @@ do duck.change_animation("walk")
 : Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
 : Alors, vous êtes venu apprendre les bases de Godot ?
 - Oui !
+	do minigame.load_minigame(1)
 	: [shake rate=20 level=10]Youpi !![/shake]
 - Non...
+	do minigame.load_minigame(2)
 	: [speed=0.2]Ah bon ? Mais tu es là, alors autant y rester, non ?[speed=1.0]
 	: Allez, on va s'amuser quand même !
 : Bienvenue à l'atelier de Godot !
+do minigame.load_minigame(3)
 : Scènes, noeuds, héritage, programmation orientée objet... Mais je ne vais pas tout balancer d’un coup, promis.
 : Rassurez-vous, on va y aller étape par étape.
 : Pour passer un dialogue, appuie sur la barre espace ou clique, utilise les flèches ou la souris pour choisir une option.

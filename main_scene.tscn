@@ -1,9 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://bme2eebn1ao58"]
+[gd_scene load_steps=34 format=3 uid="uid://bme2eebn1ao58"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_c2ir2"]
 [ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_2upk4"]
 [ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://ressources/background.png" id="3_75qr3"]
 [ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="3_kcro2"]
+[ext_resource type="AudioStream" uid="uid://c52h4l2sf5md1" path="res://ressources/007_Synthwave_421k.mp3" id="3_nwji4"]
 [ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="4_u2pif"]
 [ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="5_a75ff"]
 [ext_resource type="Script" path="res://duck.gd" id="6_qk63l"]
@@ -167,6 +168,11 @@ animations = [{
 script = ExtResource("1_c2ir2")
 dialogue_resource = ExtResource("2_2upk4")
 
+[node name="007Synthwave421k" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nwji4")
+volume_db = -32.0
+parameters/looping = true
+
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
@@ -185,6 +191,7 @@ position = Vector2(176, 139)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hgndl")
 animation = &"wiggle_walk"
+frame_progress = 0.724518
 script = ExtResource("6_qk63l")
 talk_sound = NodePath("../../Quack")
 
