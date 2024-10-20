@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://coiko3djh2mwm"]
+
+[ext_resource type="Texture2D" uid="uid://dqjxyybx5tcyy" path="res://minigames/physics/W_Rook.png" id="1_a6iis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwpsr"]
+size = Vector2(14, 19)
+
+[node name="Rook" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_a6iis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jwpsr")

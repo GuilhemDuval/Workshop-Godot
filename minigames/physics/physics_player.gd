@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var hit_force : float = 50.0
+var hit_force : float = 5.0
 
 func _process(_delta):
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) :

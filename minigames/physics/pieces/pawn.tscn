@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmyr2v8ai1i"]
+
+[ext_resource type="Texture2D" uid="uid://bk1yqhyiaperq" path="res://minigames/physics/W_Pawn.png" id="1_5ilgo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwpsr"]
+size = Vector2(14, 16)
+
+[node name="Pawn" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_5ilgo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jwpsr")

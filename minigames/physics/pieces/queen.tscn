@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b50to88e5htrg"]
+
+[ext_resource type="Texture2D" uid="uid://cp2eshl6iycfc" path="res://minigames/physics/W_Queen.png" id="1_x6pdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwpsr"]
+size = Vector2(14, 24)
+
+[node name="Queen" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_x6pdy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jwpsr")

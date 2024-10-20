@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1xfnpt4v8p17"]
+
+[ext_resource type="Texture2D" uid="uid://cl3xcmi22bxgg" path="res://minigames/physics/W_Knight.png" id="1_hsy0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwpsr"]
+size = Vector2(14, 20)
+
+[node name="Knight" type="RigidBody2D"]
+gravity_scale = 0.0
+linear_damp = 3.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_hsy0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jwpsr")

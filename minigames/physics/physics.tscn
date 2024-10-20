@@ -1,245 +1,327 @@
-[gd_scene load_steps=5 format=3 uid="uid://b817pb4f38j3s"]
+[gd_scene load_steps=12 format=3 uid="uid://b817pb4f38j3s"]
 
 [ext_resource type="Script" path="res://minigames/physics/physics_player.gd" id="1_1t2lr"]
-[ext_resource type="Texture2D" uid="uid://bfhhgojhb5ayl" path="res://minigames/physics/PhysicsCharacter.png" id="2_lauqk"]
-[ext_resource type="PackedScene" uid="uid://c0o7yntxveidi" path="res://minigames/physics/crate.tscn" id="3_mwgan"]
+[ext_resource type="Texture2D" uid="uid://ku7pd122nbq3" path="res://minigames/physics/chess.png" id="1_dwcmw"]
+[ext_resource type="Texture2D" uid="uid://ce0kirlh63fyc" path="res://minigames/physics/board_chess.png" id="1_ujl7n"]
+[ext_resource type="Texture2D" uid="uid://bc4ju0tn0qhvw" path="res://minigames/physics/B_Queen.png" id="2_04p3x"]
+[ext_resource type="PackedScene" uid="uid://c0o7yntxveidi" path="res://minigames/physics/pieces/bishop.tscn" id="3_mwgan"]
+[ext_resource type="PackedScene" uid="uid://dmyr2v8ai1i" path="res://minigames/physics/pieces/pawn.tscn" id="5_3dqe4"]
+[ext_resource type="PackedScene" uid="uid://coiko3djh2mwm" path="res://minigames/physics/pieces/rook.tscn" id="6_tys1h"]
+[ext_resource type="PackedScene" uid="uid://d1xfnpt4v8p17" path="res://minigames/physics/pieces/knight.tscn" id="7_1ikkv"]
+[ext_resource type="PackedScene" uid="uid://s3i3mltdfkp4" path="res://minigames/physics/pieces/king.tscn" id="9_iewwg"]
+[ext_resource type="PackedScene" uid="uid://b50to88e5htrg" path="res://minigames/physics/pieces/queen.tscn" id="10_7s8nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af7s8"]
-size = Vector2(18, 18)
+size = Vector2(14, 24)
 
 [node name="Main" type="Node2D"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -255.0
+offset_top = -148.0
+offset_right = 258.0
+offset_bottom = 151.0
+texture = ExtResource("1_ujl7n")
+stretch_mode = 1
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -295.0
 offset_top = -168.0
 offset_right = -255.0
 offset_bottom = -128.0
 scale = Vector2(14.8, 8.53779)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture_repeat = 2
+texture = ExtResource("1_dwcmw")
+
 [node name="Player" type="RigidBody2D" parent="."]
+position = Vector2(-7, -4)
 mass = 5.0
 gravity_scale = 0.0
 linear_damp = 1.0
+angular_damp = 100.0
 script = ExtResource("1_1t2lr")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_lauqk")
+texture = ExtResource("2_04p3x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_af7s8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="Crate" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-7, 43)
+[node name="Pieces1" type="Node2D" parent="."]
 
-[node name="Crate2" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-46, 1)
+[node name="Pawn" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(-23, 36)
 
-[node name="Crate3" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-107, -45)
+[node name="Pawn2" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(9, 36)
 
-[node name="Crate4" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(109, -22)
+[node name="Pawn3" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(41, 36)
 
-[node name="Crate5" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-61, 38)
+[node name="Pawn4" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(73, 36)
 
-[node name="Crate6" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(76, 46)
+[node name="Pawn5" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(-55, 36)
 
-[node name="Crate7" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-8, -37)
+[node name="Pawn6" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(-87, 36)
 
-[node name="Crate8" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-92, 19)
+[node name="Rook" parent="Pieces1" instance=ExtResource("6_tys1h")]
+position = Vector2(-103, 50)
 
-[node name="Crate9" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(56, 0)
+[node name="Rook2" parent="Pieces1" instance=ExtResource("6_tys1h")]
+position = Vector2(121, 50)
 
-[node name="Crate10" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(42, -45)
+[node name="Knight" parent="Pieces1" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, 50)
 
-[node name="Crate11" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-61, -59)
+[node name="Knight2" parent="Pieces1" instance=ExtResource("7_1ikkv")]
+position = Vector2(89, 50)
 
-[node name="Crate12" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(29, 46)
+[node name="Pawn7" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(105, 36)
 
-[node name="Crate13" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-107, 52)
+[node name="Pawn8" parent="Pieces1" instance=ExtResource("5_3dqe4")]
+position = Vector2(-119, 36)
 
-[node name="Crate14" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-155, -24)
+[node name="Bishop" parent="Pieces1" instance=ExtResource("3_mwgan")]
+position = Vector2(-39, 49)
 
-[node name="Crate15" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-153, 40)
+[node name="Bishop2" parent="Pieces1" instance=ExtResource("3_mwgan")]
+position = Vector2(57, 49)
 
-[node name="Crate16" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(82, 98)
+[node name="King" parent="Pieces1" instance=ExtResource("9_iewwg")]
+position = Vector2(-7, 47)
 
-[node name="Crate17" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(21, 52)
+[node name="Queen" parent="Pieces1" instance=ExtResource("10_7s8nr")]
+position = Vector2(25, 48)
 
-[node name="Crate18" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(237, 75)
+[node name="Pieces2" type="Node2D" parent="."]
+position = Vector2(-16, -81)
 
-[node name="Crate19" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(67, 135)
+[node name="Pawn" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(-23, 36)
 
-[node name="Crate20" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(204, 143)
+[node name="Pawn2" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(9, 36)
 
-[node name="Crate21" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(120, 60)
+[node name="Pawn3" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(41, 36)
 
-[node name="Crate22" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(36, 116)
+[node name="Pawn4" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(73, 36)
 
-[node name="Crate23" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(184, 97)
+[node name="Pawn5" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(-55, 36)
 
-[node name="Crate24" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(170, 52)
+[node name="Pawn6" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(-87, 36)
 
-[node name="Crate25" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(67, 38)
+[node name="Rook" parent="Pieces2" instance=ExtResource("6_tys1h")]
+position = Vector2(-103, 50)
 
-[node name="Crate26" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(157, 143)
+[node name="Rook2" parent="Pieces2" instance=ExtResource("6_tys1h")]
+position = Vector2(121, 50)
 
-[node name="Crate27" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(21, 149)
+[node name="Knight" parent="Pieces2" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, 50)
 
-[node name="Crate28" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-27, 73)
+[node name="Knight2" parent="Pieces2" instance=ExtResource("7_1ikkv")]
+position = Vector2(89, 50)
 
-[node name="Crate29" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-25, 137)
+[node name="Pawn7" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(105, 36)
 
-[node name="Crate30" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(387, -62)
+[node name="Pawn8" parent="Pieces2" instance=ExtResource("5_3dqe4")]
+position = Vector2(-119, 36)
 
-[node name="Crate31" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(326, -108)
+[node name="Bishop" parent="Pieces2" instance=ExtResource("3_mwgan")]
+position = Vector2(-39, 49)
 
-[node name="Crate32" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(542, -85)
+[node name="Bishop2" parent="Pieces2" instance=ExtResource("3_mwgan")]
+position = Vector2(57, 49)
 
-[node name="Crate33" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(372, -25)
+[node name="King" parent="Pieces2" instance=ExtResource("9_iewwg")]
+position = Vector2(-7, 47)
 
-[node name="Crate34" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(509, -17)
+[node name="Queen" parent="Pieces2" instance=ExtResource("10_7s8nr")]
+position = Vector2(25, 48)
 
-[node name="Crate35" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(425, -100)
+[node name="Pieces3" type="Node2D" parent="."]
 
-[node name="Crate36" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(341, -44)
+[node name="Pawn" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(-39, 19)
 
-[node name="Crate37" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(489, -63)
+[node name="Pawn2" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(-39, -12)
 
-[node name="Crate38" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(475, -108)
+[node name="Pawn3" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(25, 20)
 
-[node name="Crate39" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(372, -122)
+[node name="Pawn4" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(25, -12)
 
-[node name="Crate40" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(462, -17)
+[node name="Rook" parent="Pieces3" instance=ExtResource("6_tys1h")]
+position = Vector2(-55, 2)
 
-[node name="Crate41" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(326, -11)
+[node name="Rook2" parent="Pieces3" instance=ExtResource("6_tys1h")]
+position = Vector2(41, 2)
 
-[node name="Crate42" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(278, -87)
+[node name="Knight" parent="Pieces3" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, -14)
 
-[node name="Crate43" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(280, -23)
+[node name="Knight2" parent="Pieces3" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, 18)
 
-[node name="Crate44" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(82, -102)
+[node name="Knight3" parent="Pieces3" instance=ExtResource("7_1ikkv")]
+position = Vector2(57, -14)
 
-[node name="Crate45" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(21, -148)
+[node name="Knight4" parent="Pieces3" instance=ExtResource("7_1ikkv")]
+position = Vector2(57, 18)
 
-[node name="Crate46" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(237, -125)
+[node name="Bishop" parent="Pieces3" instance=ExtResource("3_mwgan")]
+position = Vector2(-87, 1)
 
-[node name="Crate47" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(67, -65)
+[node name="Bishop2" parent="Pieces3" instance=ExtResource("3_mwgan")]
+position = Vector2(73, 1)
 
-[node name="Crate48" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(204, -57)
+[node name="King" parent="Pieces3" instance=ExtResource("9_iewwg")]
+position = Vector2(-103, -17)
 
-[node name="Crate49" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(120, -140)
+[node name="King2" parent="Pieces3" instance=ExtResource("9_iewwg")]
+position = Vector2(-103, 15)
 
-[node name="Crate50" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(36, -84)
+[node name="King3" parent="Pieces3" instance=ExtResource("9_iewwg")]
+position = Vector2(89, 15)
 
-[node name="Crate51" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(184, -103)
+[node name="King4" parent="Pieces3" instance=ExtResource("9_iewwg")]
+position = Vector2(89, -17)
 
-[node name="Crate52" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(170, -148)
+[node name="Queen" parent="Pieces3" instance=ExtResource("10_7s8nr")]
+position = Vector2(-119, 1)
 
-[node name="Crate53" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(67, -162)
+[node name="Queen2" parent="Pieces3" instance=ExtResource("10_7s8nr")]
+position = Vector2(105, 0)
 
-[node name="Crate54" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(157, -57)
+[node name="Pawn5" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(-7, -12)
 
-[node name="Crate55" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(21, -51)
+[node name="Pawn6" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(9, 4)
 
-[node name="Crate56" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-27, -127)
+[node name="Pawn7" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(-7, 20)
 
-[node name="Crate57" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-25, -63)
+[node name="Pawn8" parent="Pieces3" instance=ExtResource("5_3dqe4")]
+position = Vector2(-23, 4)
 
-[node name="Crate58" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(98, 114)
+[node name="Pieces4" type="Node2D" parent="."]
+position = Vector2(-16, -112)
 
-[node name="Crate59" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(37, 68)
+[node name="Pawn" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(-23, 36)
 
-[node name="Crate60" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(253, 91)
+[node name="Pawn2" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(9, 36)
 
-[node name="Crate61" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(83, 151)
+[node name="Pawn3" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(41, 36)
 
-[node name="Crate62" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(220, 159)
+[node name="Pawn4" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(73, 36)
 
-[node name="Crate63" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(136, 76)
+[node name="Pawn5" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(-55, 36)
 
-[node name="Crate64" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(52, 132)
+[node name="Pawn6" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(-87, 36)
 
-[node name="Crate65" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(200, 113)
+[node name="Rook" parent="Pieces4" instance=ExtResource("6_tys1h")]
+position = Vector2(-103, 50)
 
-[node name="Crate66" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(186, 68)
+[node name="Rook2" parent="Pieces4" instance=ExtResource("6_tys1h")]
+position = Vector2(121, 50)
 
-[node name="Crate67" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(83, 54)
+[node name="Knight" parent="Pieces4" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, 50)
 
-[node name="Crate68" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(173, 159)
+[node name="Knight2" parent="Pieces4" instance=ExtResource("7_1ikkv")]
+position = Vector2(89, 50)
 
-[node name="Crate69" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(37, 165)
+[node name="Pawn7" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(105, 36)
 
-[node name="Crate70" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-11, 89)
+[node name="Pawn8" parent="Pieces4" instance=ExtResource("5_3dqe4")]
+position = Vector2(-119, 36)
 
-[node name="Crate71" parent="." instance=ExtResource("3_mwgan")]
-position = Vector2(-9, 153)
+[node name="Bishop" parent="Pieces4" instance=ExtResource("3_mwgan")]
+position = Vector2(-39, 49)
+
+[node name="Bishop2" parent="Pieces4" instance=ExtResource("3_mwgan")]
+position = Vector2(57, 49)
+
+[node name="King" parent="Pieces4" instance=ExtResource("9_iewwg")]
+position = Vector2(-7, 47)
+
+[node name="Queen" parent="Pieces4" instance=ExtResource("10_7s8nr")]
+position = Vector2(25, 48)
+
+[node name="Pieces5" type="Node2D" parent="."]
+position = Vector2(0, 32)
+
+[node name="Pawn" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(-23, 36)
+
+[node name="Pawn2" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(9, 36)
+
+[node name="Pawn3" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(41, 36)
+
+[node name="Pawn4" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(73, 36)
+
+[node name="Pawn5" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(-55, 36)
+
+[node name="Pawn6" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(-87, 36)
+
+[node name="Rook" parent="Pieces5" instance=ExtResource("6_tys1h")]
+position = Vector2(-103, 50)
+
+[node name="Rook2" parent="Pieces5" instance=ExtResource("6_tys1h")]
+position = Vector2(121, 50)
+
+[node name="Knight" parent="Pieces5" instance=ExtResource("7_1ikkv")]
+position = Vector2(-71, 50)
+
+[node name="Knight2" parent="Pieces5" instance=ExtResource("7_1ikkv")]
+position = Vector2(89, 50)
+
+[node name="Pawn7" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(105, 36)
+
+[node name="Pawn8" parent="Pieces5" instance=ExtResource("5_3dqe4")]
+position = Vector2(-119, 36)
+
+[node name="Bishop" parent="Pieces5" instance=ExtResource("3_mwgan")]
+position = Vector2(-39, 49)
+
+[node name="Bishop2" parent="Pieces5" instance=ExtResource("3_mwgan")]
+position = Vector2(57, 49)
+
+[node name="King" parent="Pieces5" instance=ExtResource("9_iewwg")]
+position = Vector2(-7, 47)
+
+[node name="Queen" parent="Pieces5" instance=ExtResource("10_7s8nr")]
+position = Vector2(25, 48)
