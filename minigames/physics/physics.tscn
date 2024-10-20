@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b817pb4f38j3s"]
+[gd_scene load_steps=11 format=3 uid="uid://b817pb4f38j3s"]
 
 [ext_resource type="Script" path="res://minigames/physics/physics_player.gd" id="1_1t2lr"]
-[ext_resource type="Texture2D" uid="uid://ku7pd122nbq3" path="res://minigames/physics/chess.png" id="1_dwcmw"]
 [ext_resource type="Texture2D" uid="uid://ce0kirlh63fyc" path="res://minigames/physics/board_chess.png" id="1_ujl7n"]
 [ext_resource type="Texture2D" uid="uid://bc4ju0tn0qhvw" path="res://minigames/physics/B_Queen.png" id="2_04p3x"]
 [ext_resource type="PackedScene" uid="uid://c0o7yntxveidi" path="res://minigames/physics/pieces/bishop.tscn" id="3_mwgan"]
@@ -23,19 +22,6 @@ offset_right = 258.0
 offset_bottom = 151.0
 texture = ExtResource("1_ujl7n")
 stretch_mode = 1
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -295.0
-offset_top = -168.0
-offset_right = -255.0
-offset_bottom = -128.0
-scale = Vector2(14.8, 8.53779)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture_repeat = 2
-texture = ExtResource("1_dwcmw")
 
 [node name="Player" type="RigidBody2D" parent="."]
 position = Vector2(-7, -4)
