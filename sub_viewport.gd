@@ -22,11 +22,11 @@ func load_minigame(minigame_id: int) -> void:
 	match minigame_id:
 		0:
 			current_minigame = minigame_balloon.instantiate()
-		1:
+		3:
 			current_minigame = minigame_ski.instantiate()
 		2:
 			current_minigame = minigame_chess.instantiate()
-		3:
+		1:
 			current_minigame = minigame_coin.instantiate()
 		_:
 			print("Invalid minigame ID")

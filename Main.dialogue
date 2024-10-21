@@ -1,68 +1,195 @@
 ~ start
-: Hey ! Salut les humains !!
-do media_box.move_visible()
-: Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
-do media_box.change_texture(0)
-: Alors, vous êtes venu apprendre les bases de Godot ?
+=> hamster
+do minigame.load_minigame(0)
+Hey ! Salut à toi ! Clique sur la boîte de dialogue ou appuie sur espace pour continuer.
+Moi, c’est [wave amp=25 freq=5]Uquack[/wave], et toi ?
+J'ai préparé un petit jeu pour t'apprendre ce qu’est un moteur de jeu, surtout Godot !
+T’es venu·e pour apprendre les bases de Godot ? Pour répondre, utilise les flèches du clavier et espace, ou clique sur la réponse de ton choix.
 - Oui !
-	do minigame.load_minigame(1)
-	: [shake rate=20 level=10]Youpi !![/shake]
+	[shake rate=20 level=10]Youpi ![/shake]
 - Non...
-	do minigame.load_minigame(2)
-	: [speed=0.2]Ah bon ? Mais tu es là, alors autant y rester, non ?[speed=1.0]
-	: Allez, on va s'amuser quand même !
-do media_box.change_texture(2)
-: Bienvenue à l'atelier de Godot !
-do media_box.change_texture(3)
-do minigame.load_minigame(3)
-: Scènes, noeuds, héritage, programmation orientée objet... Mais je ne vais pas tout balancer d’un coup, promis.
-do media_box.change_texture(4)
-: Rassurez-vous, on va y aller étape par étape.
-do media_box.move_hidden()
-: Pour passer un dialogue, appuie sur la barre espace ou clique, utilise les flèches ou la souris pour choisir une option.
-: Prêt·e ?
+	[speed=0.2]Vraiment ? Bon, puisque tu es là, autant en profiter ![speed=1.0]
+	Allez, amuse-toi un peu !
+Bienvenue à mon Workshop Godot !
+On va parler de scènes, de nœuds, d’héritage, et de programmation orientée objet... Mais pas d’un coup, promis.
+On va y aller tranquille, étape par étape.
+Prêt·e ?
+- C’est parti !
 => scenes
 
 ~ scenes
-: D’abord, parlons du concept de scène. C’est l’une de ces choses que les développeurs adorent.
-: On ne parle pas de théâtre, mais presque ! Une scène, c’est comme un niveau ou un écran de jeu.
-: Imagine un jeu de fête foraine où tu éclates des ballons... Tu vois l'écran avec tous les ballons ? Eh bien, cet écran, c’est une scène !
-- C'est clair ! C'est juste un écran de jeu.
-	: Exactement !
-- Je ne comprends pas encore...
-	: [wave amp=15 freq=3]Ne t'inquiète pas, on va éclaircir tout ça.[/wave]
+D’abord, parlons des scènes. Non, pas de théâtre, mais presque !
+Une scène, c’est comme un niveau ou un écran de jeu.
+Tu vois la fenêtre à droite ? Avec les ballons à éclater ?
+Vas-y, éclate-les en cliquant dessus !
+Savais-tu que c’était une scène ?
+- Oui, c’est un écran de jeu.
+	Exactement !
+- Non, je ne vois pas trop...
+	[wave amp=15 freq=3]Pas de souci, je vais tout t'expliquer ![/wave]
+
+Dans Godot, une scène, c’est un ensemble d’éléments comme des objets, des animations, du son... bref, tout ce que tu vois à l’écran.
+Regarde, notre mini-jeu a des ballons, un score, et un ciel étoilé.
+do media_box.change_texture(0)
 do media_box.move_visible()
-: Une scène dans Godot, c’est un regroupement de plusieurs éléments : des objets, des animations, du son, tout ce que tu vois à l’écran.
-: Par exemple, notre scène "fête foraine" a des ballons et un décor. Chacun de ces éléments est une sous-scène. Oui, même le ballon !
+Voilà comment ça se présente dans l'éditeur Godot.
+Une arborescence avec nos éléments.
 do media_box.move_hidden()
-: Tu vas aimer ça : une scène peut être dans une autre scène. C’est comme des poupées russes, mais pour les devs. Pratique, non ?
+
+Mais ce n’est pas tout ! Les ballons sont en fait des sous-scènes.
+Une scène peut contenir d’autres scènes. C’est un peu comme des poupées russes, mais pour développeurs. Sympa, non ?
 - Pourquoi mettre une scène dans une scène ?
-: Bonne question ! Ça permet d’organiser ton projet et de réutiliser des éléments. Imagine que tu crées un seul ballon et que tu veux en avoir dix sur l’écran. Tu ne veux pas le recréer à chaque fois, non ?
-: Alors tu crées une scène "ballon" que tu utilises plusieurs fois dans ta scène "fête foraine". Pratique et efficace !
-: Résumons ! Chaque écran de jeu est une scène, et tu peux imbriquer des scènes dans d’autres scènes pour mieux organiser ton jeu.
-- Je peux voir comment ça marche dans l'éditeur ?
-: Absolument ! Dans l’éditeur de Godot, tu verras une arborescence. C’est comme une liste de tout ce qui compose ta scène. Les noeuds, les objets, les sous-scènes, tout y est.
-: Je t’ai pas perdu, hein ? C’est tout simple une fois que tu t’y mets.
+	Bonne question ! Ça te permet d’organiser ton projet et de réutiliser des éléments. Par exemple, tu crées une scène "ballon", et tu peux en mettre autant que tu veux sans tout recréer à chaque fois.
+Pratique et efficace !
+Résumons \: chaque écran de jeu est une scène, et tu peux imbriquer des scènes pour mieux organiser ton jeu.
+Tu suis toujours ? C’est simple quand on s’y met.
+- Oui, on continue !
 => nodes
 
 ~ nodes
-: On passe à un autre concept clé : les noeuds.
-: Tout dans Godot est un noeud. Les scènes ? Ce ne sont que des regroupements de noeuds.
-: Alors, à quoi ça sert, un noeud ? Bonne question ! [shake rate=5 level=5]Je te laisse deviner ![/shake]
-- À tout gérer dans la scène ?
-	: Bingo ! Les noeuds font tout le boulot. Chaque noeud a un rôle bien précis, comme gérer une image, un son ou une interaction.
-- Je ne sais pas...
-	: C’est pas grave ! Les noeuds, c’est un peu comme des super-héros : chacun a un pouvoir particulier.
-: Par exemple, notre ballon a un noeud MeshInstance3D qui lui donne sa forme 3D.
-: Enlève ce noeud, plus de ballon ! [shake rate=10 level=7]Pouf, disparu ![/shake]
-: Ensuite, il y a un CollisionShape, un autre noeud, qui permet de donner un contour à ce ballon. Ce contour sert à détecter les clics. En gros, sans ce noeud, impossible de cliquer dessus pour le faire exploser !
-: Et puis, il y a le noeud Area, le chef d’orchestre de notre ballon. Ce noeud permet de détecter les clics de souris pour exploser les ballons. [shake rate=10 level=5]C'est la magie Godot en action ![/shake]
-- Ok, mais pourquoi tout ça ?
-	: Parce que chaque noeud apporte une fonctionnalité spécifique, et c’est cette modularité qui rend Godot si puissant.
-	: Tu ne veux pas tout coder toi-même à chaque fois, non ? Avec des noeuds, tu réutilises ce qui marche déjà.
-- D'autres exemples ?
-	: Bien sûr ! Un bouton, un personnage, un son, tout ce que tu ajoutes à ton jeu est un noeud ou un regroupement de noeuds. Même la caméra est un noeud !
-: Bon, si tu as tout suivi, tu vois qu’une scène, c’est juste un ensemble de noeuds qui travaillent ensemble pour donner vie à un élément du jeu.
-: Maintenant que tu connais les bases, tu veux tester un autre mini-jeu ? C’est le meilleur moyen d’apprendre !
-- C'est parti !
-=> END
+Passons à un autre concept clé \: les nœuds.
+Dans Godot, tout est un nœud. Les scènes ? Ce ne sont que des groupes de nœuds.
+Alors, à quoi ça sert, un nœud ? Bonne question ! [shake rate=5 level=5]Devine ![/shake]
+- Ça donne des fonctions à nos éléments ?
+	Bingo ! Chaque nœud a un rôle précis \: gérer une image, un son, ou une interaction.
+- Je ne sais pas trop...
+	No stress ! Les nœuds, c’est comme les ingrédients d'une recette \: chacun a un rôle particulier.
+Par exemple, notre ballon a un nœud MeshInstance3D qui lui donne un modèle 3D.
+Supprime ce nœud et plus de ballon !
+do media_box.change_texture(2)
+do media_box.move_visible()
+[shake rate=10 level=7]Pouf ! Disparu ![/shake]
+do media_box.move_hidden()
+
+Ensuite, il y a un CollisionShape, un autre nœud, qui donne un contour à ce ballon. Ce contour permet de détecter les clics. En gros, sans ce nœud, impossible de cliquer pour faire exploser le ballon !
+Et enfin, il y a le nœud Area, le chef d'orchestre du ballon. C’est lui qui gère les clics de souris pour exploser les ballons.
+[shake rate=10 level=5]Voilà la magie Godot ![/shake]
+do media_box.change_texture(1)
+do media_box.move_visible()
+Voici à quoi ça ressemble dans l'éditeur \: l'arborescence du ballon, avec tous les éléments que tu viens de voir.
+Area3D, CollisionShape3D, et deux MeshInstance3D pour former notre ballon !
+Tout est clair ?
+- Oui, mais pourquoi tout ça ?
+	Parce que chaque nœud a une fonctionnalité précise. Et cette modularité, c’est ce qui rend Godot si puissant.
+	Tu ne veux pas tout coder toi-même, non ? Avec des nœuds, tu réutilises ce qui fonctionne déjà.
+- Tu as d’autres exemples ?
+	Bien sûr ! Un bouton, un personnage, un son... tout ce que tu ajoutes dans ton jeu est un nœud ou un groupe de nœuds. Même la caméra est un nœud !
+Donc, une scène, c’est juste un ensemble de nœuds qui travaillent ensemble pour créer un élément du jeu.
+do media_box.move_hidden()
+Maintenant que tu maîtrises les bases, on passe à un autre mini-jeu pour pratiquer ?
+- Let’s go !
+=> hamster
+
+~ hamster  
+do minigame.load_minigame(1)  
+Bienvenue dans une nouvelle scène, où un adorable hamster se régale de graines de tournesol !  
+Tu peux le déplacer avec les flèches pour qu'il mange ces délices. Vas-y, essaie de le guider vers les graines !  
+Lorsque le hamster s'approche des graines, tu remarques qu'elles disparaissent, et notre petit ami devient de plus en plus costaud !  
+En effet, chaque fois qu'il mange une graine, il passe de mignon à musclé en un clin d'œil.  
+Cela illustre un mécanisme de croissance que nous avons intégré au jeu.
+
+Maintenant que tu es un·e expert·e, dis-moi, quels sont les scènes principales qui composent ce mini-jeu ?  
+- Sprite2D et CollisionShape2D  
+	Pas vraiment. [shake rate=10 level=5]Sprite2D et CollisionShape2D sont des noeuds, pas des scènes.[/shake]  
+	Les scènes principales sont le hamster et les graines de tournesol.  
+- Le hamster et les graines de tournesol  
+	Bravo, c'est bien ça ! [wave amp=10 freq=5]Tu as parfaitement compris la différence entre une scène et un nœud.[/wave]  
+Le hamster représente le personnage jouable, tandis que les graines constituent les objets interactifs que le joueur doit collecter.
+
+Intéressons-nous maintenant à la graine. [wave amp=5 freq=2]Elle est constituée de trois nœuds \: un nœud principal et deux sous-nœuds.[/wave]  
+Je vais te laisser deviner lesquels. [wait=0.5]Pas de panique, je t'ai apporté de la documentation pour t'aider. 
+La documentation est un précieux outil que tous les développeurs utilisent pour coder.  
+C'est un guide qui te permet de mieux comprendre les nœuds et leurs fonctions.
+
+Utilise donc la documentation pour me dire quel est le nœud principal de la graine.  
+- StaticBody2D  
+	Mauvaise réponse. [shake rate=15 level=7]Bien qu'il soit utile pour des objets fixes, ce n'est pas le nœud principal de la graine dans notre contexte.[/shake]  
+	L'Area2D est le nœud principal qui permet à la graine de détecter les objets qui entrent dans sa zone de collision.  
+	Cela signifie qu'à chaque fois que le hamster entre dans la zone de la graine, des événements peuvent être déclenchés, comme la disparition de la graine et la croissance du hamster.  
+- Area2D  
+	Bonne réponse ! [wave amp=15 freq=3]L'Area2D est le nœud principal qui permet à la graine de détecter les objets qui entrent dans sa zone de collision.[/wave]  
+	Cela signifie qu'à chaque fois que le hamster entre dans la zone de la graine, des événements peuvent être déclenchés, comme la disparition de la graine et la croissance du hamster.
+
+do media_box.change_texture(3)  
+do media_box.move_visible()  
+Voici le code, c'est simple et concis ! [shake rate=5 level=3]Grâce aux fonctions d'Area2D, nous pouvons nous simplifier la vie et éviter d'écrire trop de code complexe.[/shake]  
+La documentation nous aide à savoir quelles lignes de code utiliser et comment faire fonctionner nos nœuds.
+
+do media_box.move_hidden()  
+Revenons à notre graine. Elle ne se compose pas d'un seul nœud !  
+Les sous-nœuds ajoutent des fonctionnalités supplémentaires à notre Area2D.  
+En fait, l'Area2D ne peut pas fonctionner sans ses sous-nœuds.  
+Quelle fonctionnalité pourrait être apportée par un nœud à ton avis ?  
+- Afficher la graine de tournesol  
+	Oui, c'est grâce au nœud Sprite2D que nous pouvons afficher notre graine ! [shake rate=10 level=5]Sans ce nœud, rien ne s'afficherait à l'écran.[/shake]  
+	Cela nous permet de donner vie à nos objets et d'enrichir visuellement notre jeu.  
+	do media_box.move_visible()  
+	Comme nous l'avons vu précédemment, faire grossir le hamster se fait grâce au code associé à notre Area2D, qui gère la logique de collision et d'interaction entre les objets.  
+	do media_box.move_hidden()  
+- Faire grossir le hamster  
+	do media_box.move_visible()  
+	Ce n'est pas tout à fait ça ! [wait=0.5]C'est grâce au code que nous avons écrit précédemment.  
+	En effet, c'est le code qui gère la logique de croissance du hamster, et non un nœud en particulier.  
+	do media_box.move_hidden()  
+	Plus précisément, [wave amp=5 freq=2]tu peux ajouter du code à n'importe quel nœud pour enrichir ses fonctionnalités ![/wave]  
+	Cela permet d'adapter les comportements des nœuds en fonction des interactions du joueur, par exemple.  
+	C'est donc grâce au nœud Sprite2D que nous pouvons afficher notre graine ! Sans ce nœud, rien ne s'afficherait à l'écran.
+
+Passons à notre dernier sous-nœud qui compose la graine. [wave amp=5 freq=2]Peux-tu deviner quel est ce dernier sous-nœud ?[/wave]  
+- CollisionShape2D  
+	Oui, c'est exact ! [shake rate=15 level=7]Notre nœud Area2D a besoin d'un sous-nœud CollisionShape2D pour fonctionner correctement.[/shake]  
+	Sans ce sous-nœud, l'Area2D ne serait pas en mesure de détecter les collisions, ce qui est essentiel pour le fonctionnement du jeu.  
+	Ça ne pourrait pas être RigidBody2D, car c'est une alternative à Area2D. [wait=0.5]Il aurait été utile si nos graines n'étaient pas consommées, mais plutôt poussées par notre hamster, illustrant un comportement physique différent.  
+- RigidBody2D  
+	Ce n'est pas le bon nœud ici. [shake rate=15 level=7]RigidBody2D est plutôt une alternative à Area2D.[/shake]  
+	Il aurait été utile si nos graines n'étaient pas consommées, mais plutôt poussées par notre hamster, illustrant un comportement physique différent.  
+	La bonne réponse est donc Area2D. [wave amp=5 freq=2]Notre nœud Area2D a besoin d'un sous-nœud CollisionShape2D pour fonctionner correctement.[/wave]  
+	Sans ce sous-nœud, l'Area2D ne serait pas en mesure de détecter les collisions, ce qui est essentiel pour le fonctionnement du jeu.
+
+do media_box.change_texture(4)  
+do media_box.move_visible()  
+Voici à quoi ressemble l'arborescence de notre scène graine. [wave amp=5 freq=2]Le CollisionShape2D définit la zone de collision de la graine, qui correspond à peu près à sa forme.[/wave]  
+L'arborescence est ainsi plutôt simple, n'est-ce pas ? [shake rate=10 level=5]On y retrouve tous les nœuds de la graine \: Area2D, Sprite2D, et CollisionShape2D.[/shake]
+
+Prêt·e à passer à la suite ?  
+- Bien sûr !  
+do media_box.move_hidden()  
+Passons à l'autre scène de notre mini-jeu, le charismatique hamster !  
+Faisons la même chose avec lui. Réfléchissons à quel nœud se cache derrière ce visage angélique.  
+Quel est le nœud principal derrière notre hamster ?  
+- CharacterBody2D  
+	C'est bien ça, CharacterBody2D ! Comme tu peux le voir, [wave amp=10 freq=5]les nuances sont importantes ici.[/wave]  
+	Notre hamster est un CharacterBody2D car il est jouable et interagit avec les autres objets de collision. [shake rate=10 level=5]Ce nœud est spécialement conçu pour faciliter le déplacement et la gestion des mouvements des personnages dans le jeu.[/shake]  
+	Pas besoin de physique complexe, donc parfait pour notre hamster !  
+- RigidBody2D  
+	Ce n'est pas adapté à notre hamster. [wave amp=5 freq=2]Un RigidBody2D serait plus approprié pour des objets soumis à des forces physiques, ce qui n'est pas le cas ici.[/wave]  
+	Notre hamster est donc un CharacterBody2D car il est jouable et interagit avec les autres objets de collision. [wait=0.5]Ce nœud est spécialement conçu pour faciliter le déplacement et la gestion des mouvements des personnages dans le jeu.
+
+do media_box.change_texture(5)  
+do media_box.move_visible()  
+Comme CharacterBody2D simplifie le déplacement des personnages, le code du hamster devient tout petit !  
+[shake rate=5 level=3]Ce nœud gère aussi automatiquement les collisions et permet des mouvements fluides.[/shake]  
+do media_box.move_hidden()  
+Les objets de collision sont toujours vraiment pratiques !  
+- Mais c'est quoi un objet de collision ?  
+	Ah oui ! Je ne t'ai pas encore expliqué cela.  
+	En fait, Area2D est un objet de collision, tout comme CharacterBody2D !  
+	Un objet de collision, ou CollisionObject, est une classe dans la programmation orientée objet (POO). [wave amp=5 freq=2]Dans la POO, certaines classes héritent de comportements d'autres classes.[/wave]  
+	Cela permet de réutiliser du code et de créer des relations hiérarchiques entre les objets.
+
+do media_box.change_texture(6)  
+do media_box.move_visible()  
+Dans notre cas, Area2D et CharacterBody2D héritent tous deux de la même classe CollisionObject, [wave amp=5 freq=2]ce qui leur permet de communiquer entre eux.[/wave]  
+Ils parlent la même langue ! [shake rate=10 level=5]Cela signifie qu'ils peuvent interagir et que nous pouvons gérer les collisions de manière cohérente.
+
+Sur le schéma, tu peux retrouver tous les nœuds principaux que nous abordons aujourd'hui.  
+Ce schéma sera également utile plus tard. Mais ne t'inquiète pas, je te le ressortirai au besoin.  
+Ces informations seront également disponibles dans la documentation lorsque tu coderas. [shake rate=5 level=3]Cela t'aidera à naviguer facilement entre les différents nœuds et leurs interactions.[/shake]
+
+do media_box.move_hidden()  
+Comme tu peux le deviner, notre hamster a aussi une zone de collision avec un CollisionShape2D et un sprite à afficher.  
+Puisque le sprite est animé, nous utilisons AnimatedSprite2D, qui est déjà configuré pour ces cas-là !  
+[shake rate=5 level=3]Cela nous permet de gérer facilement les différentes animations de notre hamster, rendant le jeu encore plus dynamique et vivant.[/shake]
+
+Tout ça n'était pas facile, mais tu t'es bien débrouillé·e ! On continue ?  
+- Passons au prochain mini-jeu !
