@@ -1,5 +1,5 @@
 ~ start
-=> hamster
+=> chess
 do minigame.load_minigame(0)
 Hey ! Salut à toi ! Clique sur la boîte de dialogue ou appuie sur espace pour continuer.
 Moi, c’est [wave amp=25 freq=5]Uquack[/wave], et toi ?
@@ -193,3 +193,67 @@ Puisque le sprite est animé, nous utilisons AnimatedSprite2D, qui est déjà co
 
 Tout ça n'était pas facile, mais tu t'es bien débrouillé·e ! On continue ?  
 - Passons au prochain mini-jeu !
+=> chess
+
+~ chess
+do minigame.load_minigame(2)
+Hehe ! [wave amp=5 freq=2]Voici le mini-jeu suivant, un jeu d'échecs ![/wave]  
+Bon, je ne suis pas un expert en règles des échecs, alors j'ai fait ça à ma manière.  
+Avec la souris, clique pour influencer le mouvement de la reine noire au centre du plateau.
+Et kaboom ! [shake rate=10 level=5]Éjecte les autres pièces ![/shake]
+
+Avec ce jeu, nous allons nous concentrer sur la notion de physique. Mais d'abord, petite question !  
+Quel est le nœud principal d'une de nos pièces d'échecs ?  
+- Quelle pièce exactement ?  
+Hmmmm, pour l'instant, concentrons-nous sur notre reine noire. [wave amp=5 freq=2]Quel est le nœud principal de cette pièce ?[/wave]  
+- CharacterBody2D  
+	C'était un peu piégeux, je l'avoue. En réalité, nous contrôlons notre pièce noire grâce à la physique.  
+	C'est pourquoi nous utilisons un RigidBody2D.  
+- RigidBody2D  
+	Bien joué, c'est un RigidBody2D ! [wave amp=10 freq=5]Même si nous contrôlons notre pièce noire, c'est grâce à la physique ![/wave]  
+	Et RigidBody est parfait pour ça.  
+
+Tu dois donc te demander comment nous utilisons la physique pour contrôler notre pièce.  
+- Oui, exactement. J'allais justement demander.  
+
+do media_box.change_texture(8)  
+do media_box.move_visible()  
+Voici un aperçu du code de notre pièce. [shake rate=5 level=3]En fait, nous récupérons la position de la souris lors du clic.[/shake]  
+À partir de cela, et de la position de la pièce, nous calculons une force pour propulser la pièce.  
+Ce système est la raison pour laquelle nous utilisons RigidBody2D au lieu de CharacterBody2D, car cela nous permet de réagir à la physique.
+
+do media_box.move_hidden()  
+Et donc, quelles sont les autres pièces ? [wave amp=5 freq=2]Quel est leur nœud principal ?[/wave]  
+- StaticBody2D  
+	Presque ! [shake rate=15 level=7]Les autres pièces sont aussi des RigidBody2D.[/shake]  
+- RigidBody2D  
+Exactement ! C'est aussi RigidBody2D, en effet ! [wave amp=5 freq=2]Tu t'améliores de question en question, dis donc ![/wave]  
+
+do media_box.change_texture(7)  
+do media_box.move_visible()  
+Tu es peut-être surpris, mais oui, toutes les pièces ont exactement le même nœud principal et les mêmes sous-nœuds qui les composent.  
+Comme tu peux le deviner, [shake rate=10 level=5]ces nœuds sont bien Sprite2D et CollisionShape2D.[/shake]  
+Ils sont très souvent utilisés, retiens-les bien pour tes futurs projets !  
+
+do media_box.move_hidden()  
+Avant de continuer, petite pause pour parler de StaticBody2D. [wave amp=5 freq=2]À retenir pour la prochaine fois \: StaticBody2D n'est pas fait pour être déplacé.[/wave]  
+Ce nœud sert par exemple à modéliser des obstacles comme des murs ou un sol.  
+- Et le code des pièces blanches ?  
+Ah oui ! Eh bien, les pièces blanches n'ont pas de code associé... [shake rate=10 level=5]Les nœuds font vraiment tout le travail.[/shake]  
+Simuler des effets physiques, la gravité, la friction, etc., c'est vraiment pas simple.  
+C'est beaucoup de maths, de code et donc d'heures de travail.  
+Heureusement, tout cela est déjà fait pour nous par Godot. [wave amp=5 freq=2]Pratique, non ?[/wave]
+
+C'est dans ce genre de cas qu'on comprend vraiment l'utilité d'un moteur de jeu.  
+Et toi, qu'en penses-tu ?  
+- Comment ça ?  
+Ça te donne envie de créer tes propres jeux ? Il suffit d'avoir de bonnes bases de code, une envie d'apprendre [wave amp=5 freq=2]et c'est parti ![/wave]
+
+Comme tu peux le voir, [shake rate=10 level=5]les moteurs de jeu comme Godot[/shake] simplifient bien la création de jeux.
+Et avec la documentation, tout est bien expliqué.  
+Tu peux consulter des tutoriels en ligne ou demander de l'aide à une communauté grandissante.  
+D'ailleurs, ce jeu, le Workshop Godot, est codé grâce au moteur de jeu Godot.  
+Et c'est mon tout premier jeu Godot ! [wave amp=5 freq=2]Pas mal pour un début, non ?[/wave]  
+Alors je ne doute pas que tu peux faire tout aussi bien, si ce n'est mieux !  
+
+Mais bon, [shake rate=5 level=3]discours terminé[/shake], il est temps de passer au tout dernier mini-jeu du Workshop Godot.
