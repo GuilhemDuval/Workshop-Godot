@@ -4,7 +4,6 @@ do media_box.move_visible()
 : Je me présente, moi c'est [wait=1.0][wave amp=25 freq=5]Uquack[/wave] !
 do media_box.change_texture(0)
 : Alors, vous êtes venu apprendre les bases de Godot ?
-do media_box.change_texture(1)
 - Oui !
 	do minigame.load_minigame(1)
 	: [shake rate=20 level=10]Youpi !![/shake]

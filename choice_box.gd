@@ -4,19 +4,14 @@ extends Panel
 @export var visible_position: Vector2
 @export var transition_duration: float = 0.5
 
-var elapsed_time: float = 0.0
-
 var tween
 
 func _ready() -> void:
 	check_for_button_and_toggle_visibility()
-
-func _process(delta: float) -> void:
-	elapsed_time += delta
-
-	if elapsed_time >= 2.0:
-		elapsed_time = 0.0
-		check_for_button_and_toggle_visibility()
+	var dialogue_node = get_parent().get_parent().get_node("ExampleBalloon/Balloon/Panel/Dialogue/VBoxContainer/DialogueLabel")
+	dialogue_node.connect("finished_typing", Callable(self, "_on_dialogue_label_finished_typing"))
+	var response_node = get_node("Responses/ResponsesMenu")
+	response_node.connect("response_selected", Callable(self, "_on_response_label_response_selected"))
 
 func check_for_button_and_toggle_visibility() -> void:
 	var button_exists = check_for_visible_button(self)
@@ -37,6 +32,11 @@ func check_for_visible_button(node: Node) -> bool:
 func move_panel(target_position: Vector2) -> void:
 	if tween:
 		tween.kill()
-
 	tween = get_tree().create_tween()
 	tween.tween_property(self, "position", target_position, transition_duration)
+
+func _on_dialogue_label_finished_typing():
+	check_for_button_and_toggle_visibility() 
+	
+func _on_response_label_response_selected(response: Variant):
+	check_for_button_and_toggle_visibility() 
