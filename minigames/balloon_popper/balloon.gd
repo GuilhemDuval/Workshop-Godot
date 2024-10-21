@@ -20,7 +20,7 @@ func _ready() -> void:
 	time_offset = randf() * 6.28318
 	connect("balloon_popped", Callable(self, "_on_balloon_popped")) 
 
-func _on_balloon_popped(balloon):
+func _on_balloon_popped(_balloon):
 	print("Balloon popped!")
 	
 func _process(delta: float) -> void:
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	# Applique le déplacement à la position actuelle
 	position += Vector3(offset_x * delta, float_y * delta, offset_z * delta)
 
-func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
 		scale += Vector3.ONE * size_increase
 		clicks_to_pop -= 1

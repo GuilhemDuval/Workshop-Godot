@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 var current_animation: String = "wiggle"
 var current_frame = 0
 var current_progress = 0.0
-var speed = 1.0
+var speed_animation = 1.0
 
 @export var talk_sound : AudioStreamPlayer
 
@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 	current_frame = get_frame()
 	current_progress = get_frame_progress()
 
-	current_progress += delta * speed
+	current_progress += delta * speed_animation
 
 	if current_progress >= 1.0:
 		current_frame += 1
@@ -38,7 +38,7 @@ func change_animation(new_animation: String) -> void:
 		current_frame = 0
 		current_progress = 0.0
 		
-func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
 	change_animation("walk")
 	if letter in [" "]:
 		talk_sound.pitch_scale = randf_range(0.9, 1.1)

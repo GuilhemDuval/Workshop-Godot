@@ -18,6 +18,16 @@ func _ready() -> void:
 	ballon.start(dialogue_resource, dialogue_start)
 	duck.connexions()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func reload_scene() -> void:
+	get_tree().reload_current_scene()
+
 func _process(_delta: float) -> void:
-	pass
+	if Input.is_key_pressed(KEY_R):
+		reload_scene()
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().quit()
+	if Input.is_key_pressed(KEY_F):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

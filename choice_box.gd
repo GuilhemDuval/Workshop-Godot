@@ -38,5 +38,5 @@ func move_panel(target_position: Vector2) -> void:
 func _on_dialogue_label_finished_typing():
 	check_for_button_and_toggle_visibility() 
 	
-func _on_response_label_response_selected(response: Variant):
+func _on_response_label_response_selected(_response: Variant):
 	check_for_button_and_toggle_visibility() 

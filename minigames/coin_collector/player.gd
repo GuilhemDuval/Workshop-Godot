@@ -15,7 +15,7 @@ func _ready() -> void:
 	add_child(shrink_timer)
 	shrink_timer.start()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
 	if Input.is_key_pressed(KEY_LEFT):
 		velocity.x -= 1
