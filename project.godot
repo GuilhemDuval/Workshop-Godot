@@ -13,11 +13,12 @@ config_version=5
 config/name="Workshop Godot"
 run/main_scene="res://main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/windows_native_icon="res://duck_favicon.ico"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Global="*res://global.gd"
 
 [dialogue_manager]
 
