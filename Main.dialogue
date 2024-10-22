@@ -1,7 +1,7 @@
 ~ start
 do minigame.load_minigame(0)  
 Hey ! [wave amp=20 freq=3]Salut à toi[/wave] ! Clique sur la boîte de dialogue ou appuie sur [shake rate=10 level=3]espace[/shake] pour continuer.  
-Moi, c’est [wave amp=25 freq=5]Uquack[/wave], et toi ?  
+Moi, c’est [wave amp=25 freq=5]Uquack[/wave] !  
 J'ai préparé un [shake rate=5 level=3]petit jeu[/shake] pour t'apprendre ce qu’est un moteur de jeu, surtout [wave amp=10 freq=2]Godot[/wave] !  
 T’es venu·e pour apprendre les bases de Godot ? Pour répondre, utilise les flèches du clavier et espace, ou clique sur la réponse de ton choix.  
 - Oui !  

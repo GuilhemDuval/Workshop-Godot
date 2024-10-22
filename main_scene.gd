@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 		reload_scene()
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
-	if Input.is_key_pressed(KEY_F):
+	if Input.is_key_pressed(KEY_F) or Input.is_key_pressed(KEY_F11):
 		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
