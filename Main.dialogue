@@ -272,20 +272,20 @@ do media_box.move_panel(Vector2(633, 90))
 
 [wave amp=3 freq=2]Et oui[/wave], c'est le retour du schéma d'héritage des classes. Dès qu'il y a de la physique ou des collisions, il est particulièrement utile.  
 Alors,[wait=0.5] quel est le nœud principal de notre piste de ski ?  
-- RigidBody2D  
-	[shake rate=5 level=5]Ouch, ce n'est pas ça.[/shake] Notre sol ne réagit pas au skieur par exemple, c'est l'inverse qui se passe, [wait=0.5]donc on a affaire à un StaticBody2D.  
-	Si tu relis la description d'un StaticBody2D, tu remarqueras que [wave amp=3 freq=2]notre sol en est l'exemple parfait[/wave].  
-- StaticBody2D  
-	[wave amp=5 freq=2]Exactement[/wave], c'est un StaticBody2D ! C'est l'exemple parfait d'un StaticBody2D.  
+- RigidBody3D  
+	[shake rate=5 level=5]Ouch, ce n'est pas ça.[/shake] Notre sol ne réagit pas au skieur par exemple, c'est l'inverse qui se passe, [wait=0.5]donc on a affaire à un StaticBody3D.  
+	Si tu relis la description d'un StaticBody3D, tu remarqueras que [wave amp=3 freq=2]notre sol en est l'exemple parfait[/wave].  
+- StaticBody3D  
+	[wave amp=5 freq=2]Exactement[/wave], c'est un StaticBody3D ! C'est l'exemple parfait d'un StaticBody3D.  
 
 Comme tu l'as compris, ce mini-jeu utilise aussi beaucoup la physique. À partir de là, tu pourras plus facilement deviner le nœud principal de notre scène skieur.  
-- CharacterBody2D  
+- CharacterBody3D  
 	C'était pas facile,[wait=0.5] tu t'es fait avoir,[wait=0.5] [wave amp=5 freq=3]désolé...[/wave]  
-- RigidBody2D  
+- RigidBody3D  
 	C'était pas facile,[wait=0.5] mais tu as quand même trouvé la bonne réponse !  
-C'est donc un [shake rate=5 level=3]RigidBody2D[/shake]  et non un [shake rate=5 level=3]CharacterBody2D[/shake]. En effet, notre skieur glisse sur la piste du sol penché et il est affecté par la gravité quand il tombe. 
+C'est donc un [shake rate=5 level=3]RigidBody3D[/shake]  et non un [shake rate=5 level=3]CharacterBody3D[/shake]. En effet, notre skieur glisse sur la piste du sol penché et il est affecté par la gravité quand il tombe. 
 Le déplacement de gauche à droite se fait, lui, par le code.  
-L'inverse aurait été possible \: coder la gravité et profiter des fonctions de CharacterBody pour le contrôle du perso.  
+L'inverse aurait été possible \: coder la gravité et profiter des fonctions de CharacterBody3D pour le contrôle du perso.  
 Ça nous aurait fait écrire plus de code par contre.  
 Donc on peut conclure que notre choix n'est [wave amp=3 freq=2]pas une si mauvaise idée.[/wave]  
 Comme tu peux voir, [shake rate=5 level=2]choisir des nœuds[/shake], [wait=0.5]c'est des vrais choix hehe. 
