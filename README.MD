@@ -1,6 +1,6 @@
 # Workshop Godot
 &nbsp;  
-![Workshop Godot](./ressources\communication\artwork_landscape.png)
+![Workshop Godot](https://raw.githubusercontent.com/GuilhemDuval/Workshop-Godot/refs/heads/main/ressources/communication/artwork_landscape.png)
 &nbsp;  
 **Workshop Godot** est un projet interactif et éducatif conçu pour initier les utilisateurs au moteur de jeu **Godot** à travers une série de mini-jeux. Guidé par **Uquack**, un canard passioné et pixelisé, vous découvrirez les concepts fondamentaux du développement de jeux vidéo dans une ambiance rétro.
 
@@ -37,10 +37,10 @@ Avec **Workshop Godot**, apprendre à créer des jeux vidéo devient accessible,
 ## 🖥️ Captures d'écran
 
 ### Mini-jeu - Ballon
-![Mini-jeu - Ballon](./ressources\communication\screenshot_1.png)
+![Mini-jeu - Ballon](https://raw.githubusercontent.com/GuilhemDuval/Workshop-Godot/refs/heads/main/ressources/communication/screenshot_1.png)
 
 ### Mini-jeu - Échecs
-![Mini-jeu - Échecs](./ressources\communication\screenshot_3.png)
+![Mini-jeu - Échecs](https://raw.githubusercontent.com/GuilhemDuval/Workshop-Godot/refs/heads/main/ressources/communication/screenshot_3.png)
 
 &nbsp;  
 ## 📚 Crédits
