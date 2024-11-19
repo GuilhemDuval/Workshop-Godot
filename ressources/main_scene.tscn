@@ -1,11 +1,11 @@
 [gd_scene load_steps=29 format=3 uid="uid://crqr2k7jabkgu"]
 
-[ext_resource type="Script" path="res://main_scene.gd" id="1_ilrjy"]
-[ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_yar84"]
+[ext_resource type="Script" path="res://main_scenes/scripts/main_scene.gd" id="1_ilrjy"]
+[ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://main_scenes/dialogues/Main.dialogue" id="2_yar84"]
 [ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://ressources/background.png" id="3_tymro"]
 [ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="4_0rayp"]
 [ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="5_5s27e"]
-[ext_resource type="Script" path="res://duck.gd" id="6_l7cec"]
+[ext_resource type="Script" path="res://main_scenes/scripts/duck.gd" id="6_l7cec"]
 [ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="7_8k2c6"]
 [ext_resource type="PackedScene" uid="uid://bmq4migducauo" path="res://minigames/balloon_popper/balloon_popper.tscn" id="8_jf5cy"]
 [ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="9_s0y43"]
@@ -162,7 +162,6 @@ animations = [{
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_ilrjy")
 dialogue_resource = ExtResource("2_yar84")
-dialogue_start = null
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0

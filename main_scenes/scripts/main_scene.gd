@@ -1,6 +1,6 @@
 extends Node2D
 
-const Ballon = preload("res://balloon.tscn")
+const Ballon = preload("res://main_scenes/scenes/balloon.tscn")
 var music_player : AudioStreamPlayer
 
 @export var dialogue_resource : DialogueResource

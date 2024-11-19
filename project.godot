@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="Workshop Godot"
-run/main_scene="res://main_scene.tscn"
+config/description="Workshop Godot est une expérience éducative interactive conçue pour initier les utilisateurs au moteur de jeu Godot à travers une série de mini-jeux. Guidé par Uquack, un canard pixelisé expert en Godot, le joueur découvre les concepts fondamentaux du développement de jeux vidéo, comme les scènes, les nœuds, la physique et les collisions."
+config/version="1.0"
+run/main_scene="res://main_scenes/scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://ressources/communication/duck_favicon.png"
 config/windows_native_icon="res://duck_favicon.ico"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Global="*res://global.gd"
+Global="*res://main_scenes/scripts/global.gd"
 
 [dialogue_manager]
 
@@ -37,7 +40,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Main.dialogue")
+locale/translations_pot_files=PackedStringArray("res://main_scenes/dialogues/Main.dialogue")
 
 [rendering]
 

@@ -1,90 +1,90 @@
 [gd_scene load_steps=34 format=3 uid="uid://bme2eebn1ao58"]
 
-[ext_resource type="Script" path="res://main_scene.gd" id="1_c2ir2"]
-[ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://Main.dialogue" id="2_2upk4"]
-[ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://ressources/background.png" id="3_75qr3"]
-[ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="3_kcro2"]
-[ext_resource type="AudioStream" uid="uid://c52h4l2sf5md1" path="res://ressources/007_Synthwave_421k.mp3" id="3_nwji4"]
-[ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="4_u2pif"]
-[ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="5_a75ff"]
-[ext_resource type="Script" path="res://duck.gd" id="6_qk63l"]
-[ext_resource type="Script" path="res://sub_viewport.gd" id="9_uopo8"]
-[ext_resource type="AudioStream" uid="uid://dx5j2cfah7oeq" path="res://ressources/quack.mp3" id="10_g7fvx"]
-[ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_si0pb"]
-[ext_resource type="Texture2D" uid="uid://bn864cg1fa18s" path="res://ressources/media_box.png" id="11_4s628"]
-[ext_resource type="Script" path="res://media_box.gd" id="12_ug1vt"]
-[ext_resource type="Texture2D" uid="uid://bmu7dx03soh36" path="res://ressources/figures/figure_1_balloon_tree.png" id="14_wqg4l"]
+[ext_resource type="Script" path="res://main_scenes/scripts/main_scene.gd" id="1_7mofj"]
+[ext_resource type="Resource" uid="uid://cmk4abvc0v28a" path="res://main_scenes/dialogues/Main.dialogue" id="2_6na2m"]
+[ext_resource type="AudioStream" uid="uid://c52h4l2sf5md1" path="res://ressources/007_Synthwave_421k.mp3" id="3_jg0pl"]
+[ext_resource type="Texture2D" uid="uid://bw1lmlj3o5sv8" path="res://ressources/background.png" id="4_bya2c"]
+[ext_resource type="Texture2D" uid="uid://bwq0yvsdakesi" path="res://ressources/paint_box.png" id="5_oqi2u"]
+[ext_resource type="Texture2D" uid="uid://cne04csadixat" path="res://ressources/ducky_2_spritesheet.png" id="6_a1qnk"]
+[ext_resource type="Script" path="res://main_scenes/scripts/duck.gd" id="7_qrj1o"]
+[ext_resource type="Texture2D" uid="uid://myxnqbtgvt6" path="res://ressources/minigame_screen.png" id="8_dus2j"]
+[ext_resource type="Script" path="res://main_scenes/scripts/sub_viewport.gd" id="9_ode2y"]
+[ext_resource type="Texture2D" uid="uid://b85sat6f8duf5" path="res://ressources/start_bar.png" id="10_y5pyc"]
+[ext_resource type="AudioStream" uid="uid://dx5j2cfah7oeq" path="res://ressources/quack.mp3" id="11_eimdt"]
+[ext_resource type="Texture2D" uid="uid://bn864cg1fa18s" path="res://ressources/media_box.png" id="12_eqbfi"]
+[ext_resource type="Script" path="res://main_scenes/scripts/media_box.gd" id="13_52qsh"]
+[ext_resource type="Texture2D" uid="uid://bmu7dx03soh36" path="res://ressources/figures/figure_1_balloon_tree.png" id="14_4e6mn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_at351"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njv3n"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x8e8m"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gp2t3"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iqsgi"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_35ie7"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0abbs"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfbbb"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e61uh"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aftik"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(160, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j88yq"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3qfqv"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sa10s"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4mjgq"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ep76"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hvb4w"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(96, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k2kt"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(128, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_562a8"]
-atlas = ExtResource("5_a75ff")
+atlas = ExtResource("6_a1qnk")
 region = Rect2(160, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hgndl"]
@@ -165,25 +165,25 @@ animations = [{
 }]
 
 [node name="MainScene" type="Node2D"]
-script = ExtResource("1_c2ir2")
-dialogue_resource = ExtResource("2_2upk4")
+script = ExtResource("1_7mofj")
+dialogue_resource = ExtResource("2_6na2m")
 
 [node name="007Synthwave421k" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_nwji4")
+stream = ExtResource("3_jg0pl")
 volume_db = -10.0
 parameters/looping = true
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("3_75qr3")
+texture = ExtResource("4_bya2c")
 
 [node name="PaintBox" type="TextureRect" parent="."]
 offset_left = 63.0
 offset_top = 54.0
 offset_right = 398.0
 offset_bottom = 391.0
-texture = ExtResource("4_u2pif")
+texture = ExtResource("5_oqi2u")
 
 [node name="DuckSprite" type="AnimatedSprite2D" parent="PaintBox" node_paths=PackedStringArray("talk_sound")]
 unique_name_in_owner = true
@@ -192,7 +192,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hgndl")
 animation = &"wiggle_walk"
 frame_progress = 0.724518
-script = ExtResource("6_qk63l")
+script = ExtResource("7_qrj1o")
 talk_sound = NodePath("../../Quack")
 
 [node name="MinigameScreen" type="TextureRect" parent="."]
@@ -200,7 +200,7 @@ offset_left = 340.0
 offset_top = 28.0
 offset_right = 840.0
 offset_bottom = 328.0
-texture = ExtResource("3_kcro2")
+texture = ExtResource("8_dus2j")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="MinigameScreen"]
 layout_mode = 0
@@ -216,16 +216,16 @@ physics_object_picking_first_only = true
 size = Vector2i(470, 245)
 size_2d_override_stretch = true
 render_target_update_mode = 4
-script = ExtResource("9_uopo8")
+script = ExtResource("9_ode2y")
 
 [node name="StartBar" type="Sprite2D" parent="."]
 position = Vector2(0, 511)
-texture = ExtResource("10_si0pb")
+texture = ExtResource("10_y5pyc")
 centered = false
 
 [node name="Quack" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("10_g7fvx")
+stream = ExtResource("11_eimdt")
 volume_db = -16.0
 
 [node name="MediaBox" type="TextureRect" parent="."]
@@ -233,8 +233,8 @@ offset_left = 1014.0
 offset_top = 90.0
 offset_right = 1318.0
 offset_bottom = 331.0
-texture = ExtResource("11_4s628")
-script = ExtResource("12_ug1vt")
+texture = ExtResource("12_eqbfi")
+script = ExtResource("13_52qsh")
 hidden_position = Vector2(1014, 90)
 visible_position = Vector2(633, 119)
 transition_duration = 0.25
@@ -245,5 +245,5 @@ offset_left = 5.0
 offset_top = 49.0
 offset_right = 299.0
 offset_bottom = 215.0
-texture = ExtResource("14_wqg4l")
+texture = ExtResource("14_4e6mn")
 expand_mode = 1
