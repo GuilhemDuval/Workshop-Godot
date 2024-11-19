@@ -15,7 +15,7 @@ config/description="Workshop Godot est une expérience éducative interactive co
 config/version="1.0"
 run/main_scene="res://main_scenes/scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://ressources/communication/duck_favicon.png"
+config/icon="res://ressources/communication/duck_favicon_big.png"
 config/windows_native_icon="res://ressources/duck_favicon.ico"
 
 [autoload]
